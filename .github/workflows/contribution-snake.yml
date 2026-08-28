@@ -1,0 +1,45 @@
+name: contribution-snake
+
+# Renders the contribution graph as an animated snake into assets/generated/.
+# Reads only public contribution data for the repository owner.
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/contribution-snake.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/generated/snake.svg?palette=github-dark&color_snake=#38BDF8&color_dots=#0E151D,#173a4d,#1f5a75,#2b8cb3,#38BDF8
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain assets/generated)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/generated
+            git commit -m "chore: refresh contribution snake"
+            git push
+          else
+            echo "snake unchanged"
+          fi

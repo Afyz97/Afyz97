@@ -1,0 +1,37 @@
+{
+  "identity": {
+    "handle": "amir-os",
+    "name": "Amir Nadzim",
+    "role": "Full-Stack Engineer · Systems Designer",
+    "tagline": "Software × Systems × Automation × AI",
+    "principle": "Show what I can build, not who I built it for."
+  },
+  "currentFocus": [
+    {
+      "label": "Enterprise platform architecture",
+      "detail": "modular monolith · multi-interface delivery",
+      "state": "active",
+      "share": 40
+    },
+    {
+      "label": "AI agent orchestration",
+      "detail": "skills · MCP integrations · shared context",
+      "state": "active",
+      "share": 30
+    },
+    {
+      "label": "Process automation",
+      "detail": "queues · scheduled jobs · document pipelines",
+      "state": "active",
+      "share": 20
+    },
+    {
+      "label": "Security governance / ISMS",
+      "detail": "controls · audit evidence · risk register",
+      "state": "exploring",
+      "share": 10
+    }
+  ],
+  "mode": "build",
+  "note": "Edit this file and the focus widget regenerates. No client, organisation or production detail belongs in here."
+}

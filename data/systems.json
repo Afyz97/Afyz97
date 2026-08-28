@@ -1,0 +1,117 @@
+{
+  "$comment": "Generic portfolio labels only. Never store a real organisation, client, domain or repository name in this file.",
+  "systems": [
+    {
+      "id": "organisation-management-system",
+      "name": "Organisation Management System",
+      "category": "enterprise-systems",
+      "summary": "Integrated digital ecosystem covering the operational, administrative, financial, membership, programme and public-facing functions of an organisation.",
+      "interfaces": ["Public Website", "Member Portal", "Progressive Web App", "Admin Console"],
+      "architecture": ["Modular monolith", "Role-based access", "API-ready", "Event-driven jobs"],
+      "capabilities": [
+        "Membership management",
+        "User and access management",
+        "Committee management",
+        "Programme / activity management",
+        "Finance management",
+        "Fund management",
+        "Donation management",
+        "E-commerce",
+        "Meetings",
+        "Document / filing management",
+        "Payment gateway integration",
+        "Reporting",
+        "Notifications",
+        "System configuration"
+      ],
+      "stack": ["Laravel", "MySQL", "Bootstrap", "PWA", "Queues", "PDF generation"]
+    },
+    {
+      "id": "commerce-operations-platform",
+      "name": "Commerce + Operations Platform",
+      "category": "commerce",
+      "summary": "Storefront, point of sale and inventory operations sharing one catalogue, one stock ledger and one payment layer.",
+      "interfaces": ["Storefront", "POS Terminal", "Back Office"],
+      "architecture": ["Shared catalogue", "Stock ledger", "Gateway abstraction", "Idempotent callbacks"],
+      "capabilities": [
+        "Catalogue and variants",
+        "Cart and checkout",
+        "Order lifecycle and fulfilment",
+        "Stock movement and reconciliation",
+        "Invoicing and quotations",
+        "Payment gateway integration",
+        "Receipts and shift handling"
+      ],
+      "stack": ["Laravel", "MySQL", "Redis", "Payment gateways"]
+    },
+    {
+      "id": "ai-development-framework",
+      "name": "AI Development Framework",
+      "category": "ai-engineering",
+      "summary": "Engineering workspace that makes AI assistance repeatable across projects instead of improvised per prompt.",
+      "interfaces": ["CLI", "Editor integration", "Automation hooks"],
+      "architecture": ["Orchestrator", "Specialised agents", "Shared context", "Skill and plugin registry"],
+      "capabilities": [
+        "Agent orchestration",
+        "Reusable skills and plugins",
+        "MCP integrations",
+        "Project profiles",
+        "Development standards",
+        "Automated workflows",
+        "Knowledge management"
+      ],
+      "stack": ["Node", "MCP", "Git", "CI/CD"]
+    },
+    {
+      "id": "event-management-platform",
+      "name": "Event Management Platform",
+      "category": "events",
+      "summary": "Configurable multi-type event system handling registration, capacity, attendance and post-event reporting.",
+      "interfaces": ["Public listing", "Registration flow", "PWA check-in", "Organiser console"],
+      "architecture": ["Configurable event types", "Capacity rules", "Stateful registration", "Notification pipeline"],
+      "capabilities": [
+        "Multi-type event configuration",
+        "Registration and ticketing flows",
+        "Capacity and waitlist handling",
+        "Attendance capture",
+        "Notifications and reminders",
+        "Post-event reporting"
+      ],
+      "stack": ["Laravel", "MySQL", "PWA", "Queues"]
+    },
+    {
+      "id": "governance-security-toolkit",
+      "name": "Governance + Security Toolkit",
+      "category": "governance",
+      "summary": "Documentation and tracking layer for information security management: controls, risks, evidence and audit readiness.",
+      "interfaces": ["Documentation set", "Register views", "Audit exports"],
+      "architecture": ["Control mapping", "Risk register", "Evidence trail", "Review cycles"],
+      "capabilities": [
+        "ISMS documentation framework",
+        "Control mapping",
+        "Risk register and treatment",
+        "Audit evidence tracking",
+        "IT audit checklists",
+        "Policy review cycles"
+      ],
+      "stack": ["Markdown", "Structured data", "Reporting"]
+    },
+    {
+      "id": "membership-user-portal",
+      "name": "Membership + User Portal",
+      "category": "enterprise-systems",
+      "summary": "Self-service identity surface: one account model shared across public site, portal and installable app.",
+      "interfaces": ["Member Portal", "PWA", "Admin Console"],
+      "architecture": ["Single identity model", "Role and permission matrix", "Session and device handling"],
+      "capabilities": [
+        "Registration and verification",
+        "Profile self-service",
+        "Roles and permissions",
+        "Statements and history",
+        "Notifications",
+        "Audit logging"
+      ],
+      "stack": ["Laravel", "MySQL", "PWA", "RBAC"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+name: privacy-scan
+
+# Confidentiality gate: blocks anything that could identify a private system.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run privacy scan
+        run: bash scripts/privacy-scan.sh

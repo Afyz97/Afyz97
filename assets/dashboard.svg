@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" role="img" aria-label="System status: Laravel core, AI agents, automation, PWA delivery and data reporting active; security and ISMS exploring">
+  <title>System status panel</title>
+  <defs>
+    <linearGradient id="dg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .t { opacity: 0; animation: in .35s ease-out forwards; }
+    @keyframes in { to { opacity: 1 } }
+    .a1{animation-delay:.10s} .a2{animation-delay:.20s} .a3{animation-delay:.30s}
+    .a4{animation-delay:.40s} .a5{animation-delay:.50s} .a6{animation-delay:.60s}
+  </style>
+
+  <rect x="1" y="1" width="878" height="328" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <rect x="1" y="1" width="878" height="32" fill="#0E141B"/>
+  <line x1="1" y1="33" x2="879" y2="33" stroke="#1E2A36"/>
+  <circle cx="22" cy="17" r="5" fill="#FF5F57"/>
+  <circle cx="40" cy="17" r="5" fill="#FEBC2E"/>
+  <circle cx="58" cy="17" r="5" fill="#28C840"/>
+  <text class="mono" x="82" y="21" font-size="11.5" fill="#5C7183">system-status — dashboard</text>
+  <text class="mono" x="856" y="21" font-size="11" fill="#34D399" text-anchor="end" letter-spacing="1.2">6 SUBSYSTEMS</text>
+
+  <text class="mono" x="24" y="58" font-size="11" fill="#4E6376" letter-spacing="3">SYSTEM STATUS</text>
+  <rect x="140" y="53" width="716" height="1" fill="url(#dg)"/>
+
+  <g class="t a1">
+    <rect x="24" y="72" width="252" height="94" rx="10" fill="#0E151D" stroke="#1B2733"/>
+    <rect x="24" y="72" width="3" height="94" rx="1.5" fill="#38BDF8"/>
+    <g transform="translate(42,88)" stroke="#38BDF8" fill="none" stroke-width="1.6">
+      <rect x="0" y="0" width="11" height="11" rx="2"/><rect x="15" y="0" width="11" height="11" rx="2"/>
+      <rect x="0" y="15" width="11" height="11" rx="2"/><rect x="15" y="15" width="11" height="11" rx="2"/>
+    </g>
+    <text class="mono" x="86" y="100" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">LARAVEL CORE</text>
+    <text class="mono" x="86" y="119" font-size="11" fill="#5C7183">application runtime</text>
+    <circle cx="44" cy="140" r="4" fill="#34D399"/>
+    <circle cx="44" cy="140" r="4" fill="#34D399"><animate attributeName="r" values="4;9;4" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.6s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="58" y="144" font-size="11" fill="#34D399" letter-spacing="1.4">ACTIVE</text>
+    <rect x="176" y="137" width="80" height="5" rx="2.5" fill="#16202B"/>
+    <rect x="176" y="137" width="0" height="5" rx="2.5" fill="#38BDF8"><animate attributeName="width" from="0" to="74" dur="1.2s" begin=".3s" fill="freeze"/></rect>
+  </g>
+
+  <g class="t a2">
+    <rect x="314" y="72" width="252" height="94" rx="10" fill="#0E151D" stroke="#1B2733"/>
+    <rect x="314" y="72" width="3" height="94" rx="1.5" fill="#A78BFA"/>
+    <g transform="translate(332,88)" stroke="#A78BFA" fill="none" stroke-width="1.6">
+      <circle cx="13" cy="5" r="4"/><circle cx="4" cy="21" r="4"/><circle cx="22" cy="21" r="4"/>
+      <path d="M11 9 L6 17 M15 9 L20 17 M8 21 L18 21"/>
+    </g>
+    <text class="mono" x="376" y="100" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">AI AGENTS</text>
+    <text class="mono" x="376" y="119" font-size="11" fill="#5C7183">orchestration layer</text>
+    <circle cx="334" cy="140" r="4" fill="#34D399"/>
+    <circle cx="334" cy="140" r="4" fill="#34D399"><animate attributeName="r" values="4;9;4" dur="2.6s" begin=".4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.6s" begin=".4s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="348" y="144" font-size="11" fill="#34D399" letter-spacing="1.4">ACTIVE</text>
+    <rect x="466" y="137" width="80" height="5" rx="2.5" fill="#16202B"/>
+    <rect x="466" y="137" width="0" height="5" rx="2.5" fill="#A78BFA"><animate attributeName="width" from="0" to="68" dur="1.2s" begin=".4s" fill="freeze"/></rect>
+  </g>
+
+  <g class="t a3">
+    <rect x="604" y="72" width="252" height="94" rx="10" fill="#0E151D" stroke="#1B2733"/>
+    <rect x="604" y="72" width="3" height="94" rx="1.5" fill="#818CF8"/>
+    <g transform="translate(622,88)" stroke="#818CF8" fill="none" stroke-width="1.6">
+      <path d="M2 6 h16 M2 13 h22 M2 20 h12"/>
+      <circle cx="23" cy="6" r="2.6"/><circle cx="17" cy="20" r="2.6"/>
+    </g>
+    <text class="mono" x="666" y="100" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">AUTOMATION</text>
+    <text class="mono" x="666" y="119" font-size="11" fill="#5C7183">jobs · queues · workflows</text>
+    <circle cx="624" cy="140" r="4" fill="#34D399"/>
+    <circle cx="624" cy="140" r="4" fill="#34D399"><animate attributeName="r" values="4;9;4" dur="2.6s" begin=".8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.6s" begin=".8s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="638" y="144" font-size="11" fill="#34D399" letter-spacing="1.4">ACTIVE</text>
+    <rect x="756" y="137" width="80" height="5" rx="2.5" fill="#16202B"/>
+    <rect x="756" y="137" width="0" height="5" rx="2.5" fill="#818CF8"><animate attributeName="width" from="0" to="62" dur="1.2s" begin=".5s" fill="freeze"/></rect>
+  </g>
+
+  <g class="t a4">
+    <rect x="24" y="180" width="252" height="94" rx="10" fill="#0E151D" stroke="#1B2733"/>
+    <rect x="24" y="180" width="3" height="94" rx="1.5" fill="#38BDF8"/>
+    <g transform="translate(42,196)" stroke="#38BDF8" fill="none" stroke-width="1.6">
+      <rect x="4" y="0" width="18" height="26" rx="3"/><path d="M10 22 h6"/>
+    </g>
+    <text class="mono" x="86" y="208" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">PWA DELIVERY</text>
+    <text class="mono" x="86" y="227" font-size="11" fill="#5C7183">installable · offline-aware</text>
+    <circle cx="44" cy="248" r="4" fill="#34D399"/>
+    <circle cx="44" cy="248" r="4" fill="#34D399"><animate attributeName="r" values="4;9;4" dur="2.6s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.6s" begin="1.2s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="58" y="252" font-size="11" fill="#34D399" letter-spacing="1.4">ACTIVE</text>
+    <rect x="176" y="245" width="80" height="5" rx="2.5" fill="#16202B"/>
+    <rect x="176" y="245" width="0" height="5" rx="2.5" fill="#38BDF8"><animate attributeName="width" from="0" to="58" dur="1.2s" begin=".6s" fill="freeze"/></rect>
+  </g>
+
+  <g class="t a5">
+    <rect x="314" y="180" width="252" height="94" rx="10" fill="#0E151D" stroke="#1B2733"/>
+    <rect x="314" y="180" width="3" height="94" rx="1.5" fill="#34D399"/>
+    <g transform="translate(332,196)" stroke="#34D399" fill="none" stroke-width="1.6">
+      <path d="M2 26 v-9 M9 26 v-16 M16 26 v-22 M23 26 v-12"/>
+    </g>
+    <text class="mono" x="376" y="208" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">DATA / REPORTING</text>
+    <text class="mono" x="376" y="227" font-size="11" fill="#5C7183">modelling · exports · insight</text>
+    <circle cx="334" cy="248" r="4" fill="#34D399"/>
+    <circle cx="334" cy="248" r="4" fill="#34D399"><animate attributeName="r" values="4;9;4" dur="2.6s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.6s" begin="1.6s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="348" y="252" font-size="11" fill="#34D399" letter-spacing="1.4">ACTIVE</text>
+    <rect x="466" y="245" width="80" height="5" rx="2.5" fill="#16202B"/>
+    <rect x="466" y="245" width="0" height="5" rx="2.5" fill="#34D399"><animate attributeName="width" from="0" to="66" dur="1.2s" begin=".7s" fill="freeze"/></rect>
+  </g>
+
+  <g class="t a6">
+    <rect x="604" y="180" width="252" height="94" rx="10" fill="#0E151D" stroke="#1B2733"/>
+    <rect x="604" y="180" width="3" height="94" rx="1.5" fill="#FBBF24"/>
+    <g transform="translate(622,196)" stroke="#FBBF24" fill="none" stroke-width="1.6">
+      <path d="M13 1 L24 6 v9 c0 6 -5 10 -11 12 c-6 -2 -11 -6 -11 -12 V6 Z"/>
+      <path d="M9 14 l3 3 l6 -7"/>
+    </g>
+    <text class="mono" x="666" y="208" font-size="13.5" fill="#E6EDF3" letter-spacing="0.6">SECURITY / ISMS</text>
+    <text class="mono" x="666" y="227" font-size="11" fill="#5C7183">governance · audit · risk</text>
+    <circle cx="624" cy="248" r="4" fill="#FBBF24"><animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="638" y="252" font-size="11" fill="#FBBF24" letter-spacing="1.4">EXPLORING</text>
+    <rect x="756" y="245" width="80" height="5" rx="2.5" fill="#16202B"/>
+    <rect x="756" y="245" width="0" height="5" rx="2.5" fill="#FBBF24"><animate attributeName="width" from="0" to="34" dur="1.2s" begin=".8s" fill="freeze"/></rect>
+  </g>
+
+  <line x1="24" y1="292" x2="856" y2="292" stroke="#16202B"/>
+  <text class="mono" x="24" y="312" font-size="11.5" fill="#5C7183">uptime <tspan fill="#8FA5B8">continuous</tspan>   ·   focus <tspan fill="#8FA5B8">enterprise systems + AI orchestration</tspan>   ·   mode <tspan fill="#8FA5B8">build</tspan></text>
+</svg>

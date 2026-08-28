@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" role="img" aria-label="AI lab: orchestrator dispatching to plan, implement, review and ship agents over a shared context, skills and MCP layer">
+  <title>AI Lab — agent orchestration</title>
+  <defs>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity=".16"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity=".16"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .flow { stroke-dasharray: 6 8; animation: flow 1.6s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -28 } }
+    .t { opacity: 0; animation: in .35s ease-out forwards; }
+    @keyframes in { to { opacity: 1 } }
+    .a1{animation-delay:.15s} .a2{animation-delay:.30s} .a3{animation-delay:.45s} .a4{animation-delay:.60s} .a5{animation-delay:.75s}
+  </style>
+
+  <rect x="1" y="1" width="878" height="328" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <rect x="1" y="1" width="878" height="32" fill="#0E141B"/>
+  <line x1="1" y1="33" x2="879" y2="33" stroke="#1E2A36"/>
+  <circle cx="22" cy="17" r="5" fill="#FF5F57"/>
+  <circle cx="40" cy="17" r="5" fill="#FEBC2E"/>
+  <circle cx="58" cy="17" r="5" fill="#28C840"/>
+  <text class="mono" x="82" y="21" font-size="11.5" fill="#5C7183">ai-lab — orchestration graph</text>
+  <text class="mono" x="856" y="21" font-size="11" fill="#A78BFA" text-anchor="end" letter-spacing="1.2">PIPELINE</text>
+
+  <g class="t a1">
+    <rect x="330" y="56" width="220" height="48" rx="10" fill="url(#bg2)" stroke="#3A3566"/>
+    <circle cx="356" cy="80" r="6" fill="none" stroke="#A78BFA" stroke-width="1.6"/>
+    <circle cx="356" cy="80" r="2" fill="#A78BFA"/>
+    <text class="mono" x="374" y="76" font-size="13" fill="#E6EDF3">ORCHESTRATOR</text>
+    <text class="mono" x="374" y="93" font-size="10.5" fill="#8FA5B8">intent · routing · standards</text>
+  </g>
+
+  <g stroke="#2C3B4A" stroke-width="1.6" fill="none">
+    <path class="flow" d="M400 104 V132 H134 V158"/>
+    <path class="flow" d="M420 104 V140 H338 V158"/>
+    <path class="flow" d="M460 104 V140 H542 V158"/>
+    <path class="flow" d="M480 104 V132 H746 V158"/>
+  </g>
+
+  <g class="mono">
+    <g class="t a2">
+      <rect x="44" y="158" width="180" height="70" rx="10" fill="#0E151D" stroke="#1B2733"/>
+      <rect x="44" y="158" width="3" height="70" rx="1.5" fill="#38BDF8"/>
+      <text x="64" y="184" font-size="12.5" fill="#E6EDF3">PLAN</text>
+      <text x="64" y="203" font-size="10.5" fill="#5C7183">requirements · design</text>
+      <text x="64" y="219" font-size="10.5" fill="#5C7183">architecture decisions</text>
+    </g>
+    <g class="t a3">
+      <rect x="248" y="158" width="180" height="70" rx="10" fill="#0E151D" stroke="#1B2733"/>
+      <rect x="248" y="158" width="3" height="70" rx="1.5" fill="#A78BFA"/>
+      <text x="268" y="184" font-size="12.5" fill="#E6EDF3">IMPLEMENT</text>
+      <text x="268" y="203" font-size="10.5" fill="#5C7183">scaffold · modules</text>
+      <text x="268" y="219" font-size="10.5" fill="#5C7183">tests · migrations</text>
+    </g>
+    <g class="t a4">
+      <rect x="452" y="158" width="180" height="70" rx="10" fill="#0E151D" stroke="#1B2733"/>
+      <rect x="452" y="158" width="3" height="70" rx="1.5" fill="#34D399"/>
+      <text x="472" y="184" font-size="12.5" fill="#E6EDF3">REVIEW</text>
+      <text x="472" y="203" font-size="10.5" fill="#5C7183">quality · security</text>
+      <text x="472" y="219" font-size="10.5" fill="#5C7183">privacy checks</text>
+    </g>
+    <g class="t a5">
+      <rect x="656" y="158" width="180" height="70" rx="10" fill="#0E151D" stroke="#1B2733"/>
+      <rect x="656" y="158" width="3" height="70" rx="1.5" fill="#FBBF24"/>
+      <text x="676" y="184" font-size="12.5" fill="#E6EDF3">SHIP</text>
+      <text x="676" y="203" font-size="10.5" fill="#5C7183">docs · automation</text>
+      <text x="676" y="219" font-size="10.5" fill="#5C7183">release workflows</text>
+    </g>
+  </g>
+
+  <g stroke="#2C3B4A" stroke-width="1.6" fill="none">
+    <path class="flow" d="M134 228 V252"/>
+    <path class="flow" d="M338 228 V252"/>
+    <path class="flow" d="M542 228 V252"/>
+    <path class="flow" d="M746 228 V252"/>
+  </g>
+
+  <g class="t a5">
+    <rect x="44" y="252" width="792" height="46" rx="10" fill="#0E151D" stroke="#243444"/>
+    <rect x="44" y="252" width="792" height="2" rx="1" fill="url(#og)"/>
+    <text class="mono" x="64" y="272" font-size="11.5" fill="#8FA5B8" letter-spacing="1.4">SHARED LAYER</text>
+    <text class="mono" x="64" y="289" font-size="11" fill="#5C7183">context · skills · plugins · MCP integrations · project profiles · engineering standards</text>
+    <circle cx="812" cy="275" r="4" fill="#34D399"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle>
+    <text class="mono" x="800" y="279" font-size="10.5" fill="#34D399" text-anchor="end">SYNCED</text>
+  </g>
+
+  <text class="mono" x="24" y="318" font-size="10.5" fill="#3F5464">framework architecture shown conceptually · no private repositories or client workloads referenced</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 296" width="880" height="296" role="img" aria-label="Current focus, generated from data/profile.json">
+  <title>Current focus — generated widget</title>
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    @keyframes in { to { opacity: 1 } }
+  </style>
+  <rect x="1" y="1" width="878" height="294" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <rect x="1" y="1" width="878" height="32" fill="#0E141B"/>
+  <line x1="1" y1="33" x2="879" y2="33" stroke="#1E2A36"/>
+  <circle cx="22" cy="17" r="5" fill="#FF5F57"/>
+  <circle cx="40" cy="17" r="5" fill="#FEBC2E"/>
+  <circle cx="58" cy="17" r="5" fill="#28C840"/>
+  <text class="mono" x="82" y="21" font-size="11.5" fill="#5C7183">focus — generated widget</text>
+  <text class="mono" x="856" y="21" font-size="10.5" fill="#33465A" text-anchor="end">mode: build</text>
+
+  <text class="mono" x="24" y="58" font-size="11" fill="#4E6376" letter-spacing="3">CURRENT FOCUS</text>
+  <rect x="152" y="53" width="704" height="1" fill="url(#cg)"/>
+  <text class="mono" x="24" y="80" font-size="10.5" fill="#3F5464">generated from data/profile.json · last sync 2026-08-28</text>
+
+    <g opacity="0" style="animation: in .3s ease-out 0.1s forwards">
+      <circle cx="34" cy="92" r="4" fill="#38BDF8"/>
+      <text class="mono" x="52" y="96" font-size="12.5" fill="#E6EDF3">Enterprise platform architecture</text>
+      <text class="mono" x="52" y="112" font-size="10.5" fill="#5C7183">modular monolith · multi-interface delivery</text>
+      <rect x="500" y="85" width="300" height="7" rx="3.5" fill="#16202B"/>
+      <rect x="500" y="85" width="0" height="7" rx="3.5" fill="#38BDF8">
+        <animate attributeName="width" from="0" to="120" dur="1s" begin="0.2s" fill="freeze"/>
+      </rect>
+      <text class="mono" x="856" y="96" font-size="10.5" fill="#38BDF8" text-anchor="end" letter-spacing="1.2">ACTIVE</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.22s forwards">
+      <circle cx="34" cy="132" r="4" fill="#A78BFA"/>
+      <text class="mono" x="52" y="136" font-size="12.5" fill="#E6EDF3">AI agent orchestration</text>
+      <text class="mono" x="52" y="152" font-size="10.5" fill="#5C7183">skills · MCP integrations · shared context</text>
+      <rect x="500" y="125" width="300" height="7" rx="3.5" fill="#16202B"/>
+      <rect x="500" y="125" width="0" height="7" rx="3.5" fill="#A78BFA">
+        <animate attributeName="width" from="0" to="90" dur="1s" begin="0.32s" fill="freeze"/>
+      </rect>
+      <text class="mono" x="856" y="136" font-size="10.5" fill="#A78BFA" text-anchor="end" letter-spacing="1.2">ACTIVE</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.33999999999999997s forwards">
+      <circle cx="34" cy="172" r="4" fill="#34D399"/>
+      <text class="mono" x="52" y="176" font-size="12.5" fill="#E6EDF3">Process automation</text>
+      <text class="mono" x="52" y="192" font-size="10.5" fill="#5C7183">queues · scheduled jobs · document pipelines</text>
+      <rect x="500" y="165" width="300" height="7" rx="3.5" fill="#16202B"/>
+      <rect x="500" y="165" width="0" height="7" rx="3.5" fill="#34D399">
+        <animate attributeName="width" from="0" to="60" dur="1s" begin="0.44s" fill="freeze"/>
+      </rect>
+      <text class="mono" x="856" y="176" font-size="10.5" fill="#34D399" text-anchor="end" letter-spacing="1.2">ACTIVE</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.45999999999999996s forwards">
+      <circle cx="34" cy="212" r="4" fill="#FBBF24"/>
+      <text class="mono" x="52" y="216" font-size="12.5" fill="#E6EDF3">Security governance / ISMS</text>
+      <text class="mono" x="52" y="232" font-size="10.5" fill="#5C7183">controls · audit evidence · risk register</text>
+      <rect x="500" y="205" width="300" height="7" rx="3.5" fill="#16202B"/>
+      <rect x="500" y="205" width="0" height="7" rx="3.5" fill="#FBBF24">
+        <animate attributeName="width" from="0" to="30" dur="1s" begin="0.56s" fill="freeze"/>
+      </rect>
+      <text class="mono" x="856" y="216" font-size="10.5" fill="#FBBF24" text-anchor="end" letter-spacing="1.2">EXPLORING</text>
+    </g>
+</svg>

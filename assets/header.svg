@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 220" width="880" height="220" role="img" aria-label="AMIR OS — Software, Systems, Automation, AI">
+  <title>AMIR OS — Software, Systems, Automation, AI</title>
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="55%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="scanline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="#18242F"/>
+    </pattern>
+    <clipPath id="winclip"><rect x="1" y="1" width="878" height="218" rx="14"/></clipPath>
+  </defs>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .caret { animation: blink 1.05s steps(1) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+    .sweep { animation: sweep 7s linear infinite; }
+    @keyframes sweep { from { transform: translateX(-300px) } to { transform: translateX(1180px) } }
+    .fade { opacity: 0; animation: fade .5s ease-out forwards; }
+    .d1 { animation-delay: .15s } .d2 { animation-delay: .35s } .d3 { animation-delay: .55s } .d4 { animation-delay: .75s }
+    @keyframes fade { to { opacity: 1 } }
+  </style>
+
+  <rect x="1" y="1" width="878" height="218" rx="14" fill="#0B0F14" stroke="#1E2A36"/>
+  <g clip-path="url(#winclip)">
+    <rect x="1" y="35" width="878" height="184" fill="url(#grid)" opacity="0.55"/>
+    <rect class="sweep" x="0" y="35" width="300" height="184" fill="url(#scanline)"/>
+
+    <rect x="1" y="1" width="878" height="34" fill="#0E141B"/>
+    <line x1="1" y1="35" x2="879" y2="35" stroke="#1E2A36"/>
+    <circle cx="24" cy="18" r="5.5" fill="#FF5F57"/>
+    <circle cx="43" cy="18" r="5.5" fill="#FEBC2E"/>
+    <circle cx="62" cy="18" r="5.5" fill="#28C840"/>
+    <text class="mono" x="88" y="22" font-size="12" fill="#5C7183">amir-os — ~/profile — zsh</text>
+    <g transform="translate(770,18)">
+      <circle cx="0" cy="0" r="4" fill="#34D399"/>
+      <circle cx="0" cy="0" r="4" fill="#34D399" opacity="0.6">
+        <animate attributeName="r" values="4;10;4" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <text class="mono" x="12" y="4" font-size="11" fill="#34D399" letter-spacing="1.5">ONLINE</text>
+    </g>
+
+    <text class="mono fade d1" x="40" y="72" font-size="11.5" fill="#5C7183" letter-spacing="3.5">SYSTEM BOOTED · BUILD 2026.08 · SESSION main</text>
+    <text class="sans fade d2" x="38" y="120" font-size="52" font-weight="800" letter-spacing="1" fill="url(#hg)">AMIR OS</text>
+    <rect class="fade d2" x="40" y="132" width="300" height="2" fill="url(#rule)"/>
+
+    <g class="fade d3">
+      <text class="mono" x="40" y="158" font-size="15" fill="#E6EDF3" letter-spacing="3.2">SOFTWARE × SYSTEMS × AUTOMATION × AI</text>
+      <rect class="caret" x="392" y="145" width="9" height="16" fill="#38BDF8"/>
+    </g>
+
+    <g class="mono fade d4" font-size="11" letter-spacing="1.2">
+      <g>
+        <rect x="40" y="180" width="72" height="22" rx="11" fill="#101821" stroke="#22303D"/>
+        <text x="76" y="195" fill="#9FB3C8" text-anchor="middle">LARAVEL</text>
+      </g>
+      <g>
+        <rect x="120" y="180" width="126" height="22" rx="11" fill="#101821" stroke="#22303D"/>
+        <text x="183" y="195" fill="#9FB3C8" text-anchor="middle">ENTERPRISE WEB</text>
+      </g>
+      <g>
+        <rect x="254" y="180" width="48" height="22" rx="11" fill="#101821" stroke="#22303D"/>
+        <text x="278" y="195" fill="#9FB3C8" text-anchor="middle">PWA</text>
+      </g>
+      <g>
+        <rect x="310" y="180" width="90" height="22" rx="11" fill="#101821" stroke="#22303D"/>
+        <text x="355" y="195" fill="#9FB3C8" text-anchor="middle">AI AGENTS</text>
+      </g>
+      <g>
+        <rect x="408" y="180" width="100" height="22" rx="11" fill="#101821" stroke="#22303D"/>
+        <text x="458" y="195" fill="#9FB3C8" text-anchor="middle">AUTOMATION</text>
+      </g>
+    </g>
+
+    <g opacity="0.9" transform="translate(636,64)">
+      <rect x="0" y="0" width="204" height="96" rx="8" fill="#0E151D" stroke="#1B2733"/>
+      <text class="mono" x="12" y="18" font-size="9.5" fill="#4E6376" letter-spacing="1.6">MODULE LOAD</text>
+      <g>
+        <rect x="12" y="30" width="180" height="6" rx="3" fill="#16202B"/>
+        <rect x="12" y="30" width="0" height="6" rx="3" fill="#38BDF8">
+          <animate attributeName="width" from="0" to="168" dur="1.4s" begin="0.5s" fill="freeze"/>
+        </rect>
+        <rect x="12" y="48" width="180" height="6" rx="3" fill="#16202B"/>
+        <rect x="12" y="48" width="0" height="6" rx="3" fill="#818CF8">
+          <animate attributeName="width" from="0" to="140" dur="1.4s" begin="0.75s" fill="freeze"/>
+        </rect>
+        <rect x="12" y="66" width="180" height="6" rx="3" fill="#16202B"/>
+        <rect x="12" y="66" width="0" height="6" rx="3" fill="#A78BFA">
+          <animate attributeName="width" from="0" to="112" dur="1.4s" begin="1s" fill="freeze"/>
+        </rect>
+      </g>
+      <text class="mono" x="12" y="88" font-size="9.5" fill="#34D399" letter-spacing="1.4">ALL SUBSYSTEMS NOMINAL</text>
+    </g>
+  </g>
+</svg>

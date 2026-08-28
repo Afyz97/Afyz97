@@ -1,0 +1,41 @@
+{
+  "$comment": "Technology names only. Deployment targets, hosts, domains and internal tooling names must not appear here.",
+  "groups": [
+    {
+      "id": "backend",
+      "label": "Backend",
+      "accent": "#38BDF8",
+      "items": ["Laravel", "PHP", "Modular monolith", "REST APIs", "Queues and jobs", "Scheduled tasks"]
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "accent": "#A78BFA",
+      "items": ["Blade", "Livewire", "Bootstrap", "Tailwind", "JavaScript", "Progressive Web App"]
+    },
+    {
+      "id": "database",
+      "label": "Database",
+      "accent": "#34D399",
+      "items": ["MySQL", "MariaDB", "Redis", "Schema design", "Migrations", "Reporting queries"]
+    },
+    {
+      "id": "ai-engineering",
+      "label": "AI Engineering",
+      "accent": "#818CF8",
+      "items": ["Agent orchestration", "Skills and plugins", "MCP integrations", "Context design", "Workflow automation"]
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastructure",
+      "accent": "#38BDF8",
+      "items": ["Git", "GitHub Actions", "Composer", "npm", "Vite", "Background workers"]
+    },
+    {
+      "id": "governance",
+      "label": "Governance / Security",
+      "accent": "#FBBF24",
+      "items": ["RBAC", "Permission matrices", "Audit logging", "ISMS documentation", "Risk registers"]
+    }
+  ]
+}

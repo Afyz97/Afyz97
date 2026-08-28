@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 268" width="880" height="268" role="img" aria-label="Boot sequence: modules and services loading, all subsystems ready">
+  <title>Boot sequence — modules and services loading</title>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 13px; }
+    .l { opacity: 0; animation: in .28s ease-out forwards; }
+    @keyframes in { to { opacity: 1 } }
+    .d1{animation-delay:.10s} .d2{animation-delay:.30s} .d3{animation-delay:.50s} .d4{animation-delay:.70s}
+    .d5{animation-delay:.90s} .d6{animation-delay:1.10s} .d7{animation-delay:1.55s}
+    .caret { animation: blink 1.05s steps(1) infinite; }
+    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+  </style>
+
+  <rect x="1" y="1" width="878" height="266" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <rect x="1" y="1" width="878" height="32" fill="#0E141B"/>
+  <line x1="1" y1="33" x2="879" y2="33" stroke="#1E2A36"/>
+  <circle cx="22" cy="17" r="5" fill="#FF5F57"/>
+  <circle cx="40" cy="17" r="5" fill="#FEBC2E"/>
+  <circle cx="58" cy="17" r="5" fill="#28C840"/>
+  <text class="mono" x="82" y="21" font-size="11.5" fill="#5C7183">boot — /dev/amir-os</text>
+
+  <g class="mono" fill="#8FA5B8">
+    <g class="l d1"><text x="28" y="66"><tspan fill="#4E6376">[ 0.001 ]</tspan>  init   kernel amir-os 2026.08 ················· <tspan fill="#34D399">OK</tspan></text></g>
+    <g class="l d2"><text x="28" y="92"><tspan fill="#4E6376">[ 0.114 ]</tspan>  mount  /modules/laravel-core ··············· <tspan fill="#34D399">OK</tspan></text></g>
+    <g class="l d3"><text x="28" y="118"><tspan fill="#4E6376">[ 0.228 ]</tspan>  mount  /modules/enterprise-systems ········· <tspan fill="#34D399">OK</tspan></text></g>
+    <g class="l d4"><text x="28" y="144"><tspan fill="#4E6376">[ 0.351 ]</tspan>  start  service ai-orchestrator ············· <tspan fill="#34D399">OK</tspan></text></g>
+    <g class="l d5"><text x="28" y="170"><tspan fill="#4E6376">[ 0.502 ]</tspan>  start  service automation-runner ··········· <tspan fill="#34D399">OK</tspan></text></g>
+    <g class="l d6"><text x="28" y="196"><tspan fill="#4E6376">[ 0.664 ]</tspan>  load   profile engineer/full-stack ········· <tspan fill="#34D399">OK</tspan></text></g>
+  </g>
+
+  <g transform="translate(28,216)">
+    <rect x="0" y="0" width="720" height="8" rx="4" fill="#16202B"/>
+    <rect x="0" y="0" width="0" height="8" rx="4" fill="#38BDF8">
+      <animate attributeName="width" from="0" to="720" dur="1.5s" begin="0.1s" fill="freeze"/>
+    </rect>
+  </g>
+  <g class="l d7 mono">
+    <text x="762" y="225" font-size="12" fill="#34D399" letter-spacing="1.4">READY</text>
+    <text x="28" y="252" font-size="12.5" fill="#8FA5B8">$ <tspan fill="#E6EDF3">profile --render</tspan></text>
+    <rect class="caret" x="176" y="241" width="8" height="14" fill="#38BDF8"/>
+  </g>
+</svg>
