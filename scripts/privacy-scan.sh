@@ -21,7 +21,7 @@ check() { # check <label> <pattern>
   fi
 }
 
-echo "privacy scan — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+echo "privacy scan: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 echo
 
 check "email addresses"        '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
@@ -45,7 +45,7 @@ fi
 # Image assets need a human to confirm they are not production screenshots.
 shots=$(find ./assets -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' -o -iname '*.gif' \) 2>/dev/null)
 if [ -n "$shots" ]; then
-  printf '\033[33mWARN\033[0m  raster images present — confirm no production screenshots:\n%s\n' "$shots"
+  printf '\033[33mWARN\033[0m  raster images present: confirm no production screenshots:\n%s\n' "$shots"
 fi
 
 echo

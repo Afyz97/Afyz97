@@ -5,7 +5,7 @@ How this profile is put together, and why each piece is the way it is.
 ## Layout
 
 ```text
-README.md                     the profile — composed of panels, not paragraphs
+README.md                     the profile: panels, not paragraphs
 assets/*.svg                  hand-authored panels (chrome)
 assets/generated/*.svg        machine-authored panels (never edit by hand)
 data/*.json                   the content source of truth for generated panels
@@ -19,7 +19,7 @@ profile.config.json           repository disclosure allowlist
 ## The core rule: SVG is chrome, Markdown is content
 
 Text inside an SVG does not reflow. On a 375px phone the README column is roughly
-340px wide, so an 880px-wide panel renders its 12px type at about 4.6px — unreadable.
+340px wide, so an 880px-wide panel renders its 12px type at about 4.6px, which is unreadable.
 
 So every visual panel is paired with a real Markdown equivalent directly beneath it:
 
@@ -31,15 +31,15 @@ So every visual panel is paired with a real Markdown equivalent directly beneath
 | `ai-lab.svg` | The Mermaid pipeline + layer table |
 | `activity.svg` | The stat panels below it |
 
-If the images fail to load — or a screen reader is used, or someone views the raw file —
+If the images fail to load, or a screen reader is used, or someone views the raw file,
 the profile still reads completely. The panels add polish; they never carry information
 alone. Every `<img>` also carries a descriptive `alt`.
 
 ## Why no `<picture>` theme pairs
 
 Each panel carries its own dark background and border, so it reads as a deliberate
-terminal window on both GitHub themes. The alternative — a light and a dark variant of
-every asset behind `<picture media="(prefers-color-scheme: dark)">` — doubles the number
+terminal window on both GitHub themes. The alternative, a light and a dark variant of
+every asset behind `<picture media="(prefers-color-scheme: dark)">`, doubles the number
 of files to keep in sync for a marginal gain. One asset, both themes.
 
 If you ever want a true light variant, the pattern is:
@@ -77,13 +77,13 @@ while reading, and no animation conveys information that isn't also in static te
 | Border | `#1E2A36` / `#1B2733` | Window and tile edges |
 | Text | `#E6EDF3` | Primary |
 | Muted | `#8FA5B8` / `#5C7183` | Secondary, labels |
-| Cyan | `#38BDF8` | Primary accent — backend, infrastructure |
-| Violet | `#A78BFA` | Secondary accent — AI, frontend |
-| Indigo | `#818CF8` | Tertiary — automation |
+| Cyan | `#38BDF8` | Primary accent: backend, infrastructure |
+| Violet | `#A78BFA` | Secondary accent: AI, frontend |
+| Indigo | `#818CF8` | Tertiary: automation |
 | Green | `#34D399` | Active status, data |
 | Amber | `#FBBF24` | Exploring status, governance |
 
-Accents are assigned by *domain*, not by decoration — a violet bar always means AI, an
+Accents are assigned by *domain*, not by decoration: a violet bar always means AI, an
 amber dot always means governance or a non-active state.
 
 ## Data flow

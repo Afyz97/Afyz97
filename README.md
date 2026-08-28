@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" width="100%" alt="AMIR OS — Software × Systems × Automation × AI">
+  <img src="assets/header.svg" width="100%" alt="AMIR OS: Software × Systems × Automation × AI">
 </p>
 
 <p align="center">
@@ -14,14 +14,14 @@
 </p>
 
 <p align="center">
-  <img src="assets/boot.svg" width="100%" alt="Boot sequence — modules and services loading, all subsystems ready">
+  <img src="assets/boot.svg" width="100%" alt="Boot sequence: modules and services loading, all subsystems ready">
 </p>
 
 <p align="center">
-  <img src="assets/whoami.svg" width="100%" alt="whoami — full-stack engineer, systems designer, enterprise web and AI engineering">
+  <img src="assets/whoami.svg" width="100%" alt="whoami: full-stack engineer, systems designer, enterprise web and AI engineering">
 </p>
 
-> I build **integrated organisational platforms** — systems where membership, finance,
+> I build **integrated organisational platforms**: systems where membership, finance,
 > programmes, commerce, documents and communications stop being separate spreadsheets
 > and become one coherent application.
 >
@@ -33,7 +33,7 @@
 ## Status
 
 <p align="center">
-  <img src="assets/dashboard.svg" width="100%" alt="System status — Laravel core, AI agents, automation, PWA delivery and data reporting active; security and ISMS exploring">
+  <img src="assets/dashboard.svg" width="100%" alt="System status: Laravel core, AI agents, automation, PWA delivery and data reporting active; security and ISMS exploring">
 </p>
 
 <p align="center">
@@ -49,20 +49,20 @@
 | **Data / reporting** | 🟢 `ACTIVE` | Schema design, reporting queries, exports |
 | **Security / ISMS** | 🟡 `EXPLORING` | Control mapping, audit evidence, risk registers |
 
-<sub>The focus panel above is generated from <a href="data/profile.json">data/profile.json</a> by a GitHub Action — edit the JSON, the widget follows.</sub>
+<sub>The focus panel above is generated from <a href="data/profile.json">data/profile.json</a> by a GitHub Action. Edit the JSON, the widget follows.</sub>
 
 ---
 
 ## Systems
 
 <p align="center">
-  <img src="assets/apps.svg" width="100%" alt="Application launcher — six installed systems shown by capability">
+  <img src="assets/apps.svg" width="100%" alt="Application launcher: six installed systems shown by capability">
 </p>
 
 <sub>🔒 Every system below is a real build described generically. Organisation, client, domain and repository identities are deliberately withheld.</sub>
 
 <details>
-<summary><b>▸ Organisation Management System</b> — <i>integrated enterprise web platform</i></summary>
+<summary><b>▸ Organisation Management System</b> · <i>integrated enterprise web platform</i></summary>
 
 <br>
 
@@ -93,19 +93,19 @@ membership, programme and public-facing functions of an organisation.
 ![Notifications](https://img.shields.io/badge/Notifications-0E151D?style=flat-square&labelColor=0B0F14)
 ![Configuration](https://img.shields.io/badge/Configuration-0E151D?style=flat-square&labelColor=0B0F14)
 
-**Problem** — membership, finance, programmes and documentation run as disconnected
+**Problem.** Membership, finance, programmes and documentation run as disconnected
 processes: parallel spreadsheets, manual receipts, chat-based approvals, no single
 source of truth for who a member is or what they owe.
 
-**Solution** — one identity model and one ledger behind four interfaces, so a member
+**Solution.** One identity model and one ledger behind four interfaces, so a member
 record, a payment and a programme registration are the same data seen from different
 angles.
 
-**Engineering focus** — modular architecture · database design · business process
+**Engineering focus.** Modular architecture · database design · business process
 automation · role-based access · payment integration · PWA · background processing ·
 auditability · responsive UI.
 
-**Representative data** *(invented sample values — never production data)*
+**Representative data** *(invented sample values, never production data)*
 
 ```text
 User Name:   Alex Morgan
@@ -118,7 +118,7 @@ Amount:      RM 100.00
 </details>
 
 <details>
-<summary><b>▸ Commerce + Operations Platform</b> — <i>storefront, POS and inventory on one ledger</i></summary>
+<summary><b>▸ Commerce + Operations Platform</b> · <i>storefront, POS and inventory on one ledger</i></summary>
 
 <br>
 
@@ -128,11 +128,11 @@ Amount:      RM 100.00
 | **Interfaces** | Storefront · POS Terminal · Back Office |
 | **Architecture** | Shared catalogue · Stock ledger · Gateway abstraction · Idempotent callbacks |
 
-**Capabilities** — catalogue and variants · cart and checkout · order lifecycle and
+**Capabilities.** Catalogue and variants · cart and checkout · order lifecycle and
 fulfilment · stock movement and reconciliation · invoicing and quotations · payment
 gateway integration · receipts and shift handling.
 
-**Engineering focus** — the hard part is not the storefront, it is keeping one stock
+**Engineering focus.** The hard part is not the storefront, it is keeping one stock
 figure honest while a POS terminal, a web order and a manual adjustment all move it.
 Movements are recorded as an append-only ledger; gateway callbacks are idempotent so a
 retried webhook cannot double-credit an order.
@@ -140,7 +140,7 @@ retried webhook cannot double-credit an order.
 </details>
 
 <details>
-<summary><b>▸ AI Development Framework</b> — <i>agent orchestration workspace</i></summary>
+<summary><b>▸ AI Development Framework</b> · <i>agent orchestration workspace</i></summary>
 
 <br>
 
@@ -150,17 +150,17 @@ retried webhook cannot double-credit an order.
 | **Interfaces** | CLI · Editor integration · Automation hooks |
 | **Architecture** | Orchestrator · Specialised agents · Shared context · Skill and plugin registry |
 
-**Capabilities** — agent orchestration · reusable skills and plugins · MCP integrations ·
+**Capabilities.** Agent orchestration · reusable skills and plugins · MCP integrations ·
 project profiles · development standards · automated workflows · knowledge management.
 
-**Engineering focus** — making AI assistance *repeatable* rather than improvised per
+**Engineering focus.** Making AI assistance *repeatable* rather than improvised per
 prompt: standards live in the framework, not in whoever happens to be typing.
 See [AI Lab](#ai-lab) for the pipeline.
 
 </details>
 
 <details>
-<summary><b>▸ Event Management Platform</b> — <i>multi-type events, registration and check-in</i></summary>
+<summary><b>▸ Event Management Platform</b> · <i>multi-type events, registration and check-in</i></summary>
 
 <br>
 
@@ -170,17 +170,17 @@ See [AI Lab](#ai-lab) for the pipeline.
 | **Interfaces** | Public listing · Registration flow · PWA check-in · Organiser console |
 | **Architecture** | Configurable event types · Capacity rules · Stateful registration · Notification pipeline |
 
-**Capabilities** — multi-type event configuration · registration and ticketing flows ·
+**Capabilities.** Multi-type event configuration · registration and ticketing flows ·
 capacity and waitlist handling · attendance capture · notifications and reminders ·
 post-event reporting.
 
-**Engineering focus** — one registration engine that adapts to event types rather than a
+**Engineering focus.** One registration engine that adapts to event types rather than a
 new codebase per event; check-in works from a phone on unreliable venue connectivity.
 
 </details>
 
 <details>
-<summary><b>▸ Governance + Security Toolkit</b> — <i>ISMS documentation, controls and audit evidence</i></summary>
+<summary><b>▸ Governance + Security Toolkit</b> · <i>ISMS documentation, controls and audit evidence</i></summary>
 
 <br>
 
@@ -190,16 +190,16 @@ new codebase per event; check-in works from a phone on unreliable venue connecti
 | **Interfaces** | Documentation set · Register views · Audit exports |
 | **Architecture** | Control mapping · Risk register · Evidence trail · Review cycles |
 
-**Capabilities** — ISMS documentation framework · control mapping · risk register and
+**Capabilities.** ISMS documentation framework · control mapping · risk register and
 treatment · audit evidence tracking · IT audit checklists · policy review cycles.
 
-**Engineering focus** — turning compliance from a document graveyard into a queryable
+**Engineering focus.** Turning compliance from a document graveyard into a queryable
 structure: controls map to evidence, evidence maps to review dates.
 
 </details>
 
 <details>
-<summary><b>▸ Membership + User Portal</b> — <i>one identity across web, portal and app</i></summary>
+<summary><b>▸ Membership + User Portal</b> · <i>one identity across web, portal and app</i></summary>
 
 <br>
 
@@ -209,10 +209,10 @@ structure: controls map to evidence, evidence maps to review dates.
 | **Interfaces** | Member Portal · PWA · Admin Console |
 | **Architecture** | Single identity model · Role and permission matrix · Session and device handling |
 
-**Capabilities** — registration and verification · profile self-service · roles and
+**Capabilities.** Registration and verification · profile self-service · roles and
 permissions · statements and history · notifications · audit logging.
 
-**Engineering focus** — one account model shared across three interfaces, so permissions
+**Engineering focus.** One account model shared across three interfaces, so permissions
 are defined once and enforced everywhere rather than re-implemented per surface.
 
 </details>
@@ -283,7 +283,7 @@ flowchart TD
 ```
 
 <details>
-<summary><b>▸ Request lifecycle</b> — how one action moves through the system</summary>
+<summary><b>▸ Request lifecycle</b> · how one action moves through the system</summary>
 
 <br>
 
@@ -332,7 +332,7 @@ everything that changes money or membership writes an audit entry.
 ## AI Lab
 
 <p align="center">
-  <img src="assets/ai-lab.svg" width="100%" alt="AI orchestration — orchestrator dispatching to plan, implement, review and ship agents over a shared context, skills and MCP layer">
+  <img src="assets/ai-lab.svg" width="100%" alt="AI orchestration: orchestrator dispatching to plan, implement, review and ship agents over a shared context, skills and MCP layer">
 </p>
 
 ```mermaid
@@ -357,7 +357,7 @@ flowchart LR
 | **Shared context** | Project profiles and engineering standards every agent inherits |
 | **Knowledge management** | Decisions captured where the next session will find them |
 
-<sub>Architecture shown conceptually — no private repositories or client workloads referenced.</sub>
+<sub>Architecture shown conceptually. No private repositories or client workloads are referenced.</sub>
 
 ---
 
@@ -428,7 +428,7 @@ flowchart LR
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Afyz97&layout=compact&hide_border=true&bg_color=0B0F14&title_color=38BDF8&text_color=8FA5B8" height="165" alt="Top languages">
 </p>
 
-<sub>The focus split above is self-declared, not live telemetry. The panels below it read public GitHub data only — private repositories are never enumerated.</sub>
+<sub>The focus split above is self-declared, not live telemetry. The panels below it read public GitHub data only; private repositories are never enumerated.</sub>
 
 ---
 
@@ -469,7 +469,7 @@ flowchart LR
 </p>
 
 <p align="center">
-  <sub>Add further contact badges in <a href="docs/CUSTOMIZATION.md">docs/CUSTOMIZATION.md</a> — kept minimal here by design.</sub>
+  <sub>Add further contact badges in <a href="docs/CUSTOMIZATION.md">docs/CUSTOMIZATION.md</a>. Kept minimal here by design.</sub>
 </p>
 
 <p align="center">
@@ -479,7 +479,7 @@ flowchart LR
 <p align="center">
   <sub>
     Private systems are described generically by architecture and capability. No client, organisation,
-    institution, production domain or operational data is disclosed —
-    see <a href="docs/PRIVACY-REVIEW.md">the privacy review</a>.
+    institution, production domain or operational data is disclosed.
+    See <a href="docs/PRIVACY-REVIEW.md">the privacy review</a>.
   </sub>
 </p>

@@ -15,7 +15,7 @@ Runs `scripts/build-widgets.mjs --selftest` first, then the build. The self-chec
 share clamping and XML escaping, so a malformed `data/profile.json` fails the run instead
 of committing a broken panel.
 
-The commit step is conditional — `git status --porcelain assets/generated` — so the weekly
+The commit step is conditional on `git status --porcelain assets/generated`, so the weekly
 cron produces no commit unless the output actually changed.
 
 **Zero dependencies.** No `package.json`, no `npm install`, no lockfile to keep patched.
@@ -56,7 +56,7 @@ a description is *conceptually* identifying. The manual checklist in
 | Widget stops updating | Actions disabled on the repo, or the cron paused after 60 days of no repo activity | Re-enable in Settings ▸ Actions; run manually once |
 | Snake shows the placeholder | Workflow hasn't run yet | Actions ▸ contribution-snake ▸ Run workflow |
 | Panel renders blank | Malformed XML in the SVG | Validate (see [CUSTOMIZATION.md](CUSTOMIZATION.md)) |
-| Stat cards blank or slow | Third-party service rate-limited | Wait, or delete the block — see CUSTOMIZATION.md |
+| Stat cards blank or slow | Third-party service rate-limited | Wait, or delete the block (see CUSTOMIZATION.md) |
 | A stale panel keeps showing | GitHub's camo proxy cached the old image | Hard-refresh; camo revalidates within minutes |
 
 ## Deliberately not automated

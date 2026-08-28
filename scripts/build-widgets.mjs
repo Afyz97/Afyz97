@@ -48,7 +48,7 @@ function render(profile, stamp) {
     .join("\n");
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 ${height}" width="880" height="${height}" role="img" aria-label="Current focus, generated from data/profile.json">
-  <title>Current focus — generated widget</title>
+  <title>Current focus: generated widget</title>
   <defs>
     <linearGradient id="cg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#38BDF8"/>
@@ -65,7 +65,7 @@ function render(profile, stamp) {
   <circle cx="22" cy="17" r="5" fill="#FF5F57"/>
   <circle cx="40" cy="17" r="5" fill="#FEBC2E"/>
   <circle cx="58" cy="17" r="5" fill="#28C840"/>
-  <text class="mono" x="82" y="21" font-size="11.5" fill="#5C7183">focus — generated widget</text>
+  <text class="mono" x="82" y="21" font-size="11.5" fill="#5C7183">focus · generated widget</text>
   <text class="mono" x="856" y="21" font-size="10.5" fill="#33465A" text-anchor="end">mode: ${esc(profile.mode || "build")}</text>
 
   <text class="mono" x="24" y="58" font-size="11" fill="#4E6376" letter-spacing="3">CURRENT FOCUS</text>

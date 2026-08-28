@@ -2,7 +2,7 @@
 
 ## Change what you're working on
 
-Edit [`data/profile.json`](../data/profile.json), push, done — the Action regenerates
+Edit [`data/profile.json`](../data/profile.json), push, done. The Action regenerates
 `assets/generated/focus.svg` within a minute.
 
 ```jsonc
@@ -28,7 +28,7 @@ node scripts/build-widgets.mjs --selftest # check the generator still behaves
 
 ## Add or change a system card
 
-1. Add the entry to [`data/systems.json`](../data/systems.json) — this is the
+1. Add the entry to [`data/systems.json`](../data/systems.json), which is the
    canonical, reviewable list.
 2. Add the matching `<details>` block under `## Systems` in `README.md`.
 3. If it needs a tile in the launcher graphic, add it to `assets/apps.svg` (6 tiles fit
@@ -49,16 +49,16 @@ Badge colours live in the `README.md` shields URLs (`labelColor=`, `logoColor=`)
 
 ## Edit a panel
 
-Panels are plain SVG — open them in any editor. Conventions worth keeping:
+Panels are plain SVG. Open them in any editor. Conventions worth keeping:
 
 - Keep the 880-unit viewBox width so panels align with each other.
-- Keep the title bar (three dots + label) — it is what makes the OS metaphor read.
+- Keep the title bar (three dots + label). It is what makes the OS metaphor read.
 - Body text at 12px or larger in the viewBox; anything smaller disappears on mobile.
 - Use only generic font families (`ui-monospace`, `-apple-system`, …). Web fonts cannot
   load through GitHub's image proxy.
-- Never leave a bare `&`, `<` or `>` in text — SVG is XML and will fail to parse.
+- Never leave a bare `&`, `<` or `>` in text. SVG is XML and will fail to parse.
 
-Validate before committing — SVG is XML, so a stray `&` breaks the whole panel:
+Validate before committing. SVG is XML, so a stray `&` breaks the whole panel:
 
 ```bash
 xmllint --noout assets/*.svg assets/generated/*.svg   # if libxml2 is available
@@ -81,7 +81,7 @@ The Connect section is deliberately sparse. To extend it, add shields badges:
 <a href="YOUR_LINKEDIN_URL"><img src="https://img.shields.io/badge/LinkedIn-0B0F14?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"></a>
 ```
 
-Publishing an email address on a profile invites scraping — a contact form or a platform
+Publishing an email address on a profile invites scraping; a contact form or a platform
 DM link is usually the better trade. If you do add one, remember `scripts/privacy-scan.sh`
 fails on email patterns by design; that check exists so the decision is deliberate rather
 than accidental.
@@ -90,7 +90,7 @@ than accidental.
 
 The two `github-readme-stats` images in `## Activity` are hosted by a third party and can
 be slow or rate-limited. They read public data only. Delete that `<p align="center">`
-block if you'd rather not depend on an external service — nothing else references it.
+block if you'd rather not depend on an external service; nothing else references it.
 
 ## Show a public repository
 
@@ -101,4 +101,4 @@ Repository names are gated by [`profile.config.json`](../profile.config.json):
 ```
 
 Add the name there first, then reference it in the README. The allowlist is the record of
-a deliberate decision — never enumerate repositories just because the API returns them.
+a deliberate decision. Never enumerate repositories just because the API returns them.
