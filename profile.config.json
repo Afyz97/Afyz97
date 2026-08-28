@@ -1,0 +1,5 @@
+{
+  "publicRepositories": [],
+  "excludePrivateProjectReferences": true,
+  "note": "Explicit allowlist. Any GitHub-API-generated section (repo cards, pinned lists, activity feeds) may render ONLY repositories named in publicRepositories. Never enumerate repositories just because the API returns them."
+}
