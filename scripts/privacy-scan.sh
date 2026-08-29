@@ -31,7 +31,7 @@ check "credentials / secrets"  '(password|passwd|secret|api[_-]?key|access[_-]?t
 check "connection strings"     '(mysql|postgres|mongodb|redis)://'
 
 # URLs are allowed only for the services the README deliberately embeds.
-allow='github\.com|githubusercontent\.com|shields\.io|github-readme-stats|streak-stats|readme-typing-svg|w3\.org|schemastore\.org'
+allow='github\.com|githubusercontent\.com|shields\.io|streak-stats|readme-typing-svg|w3\.org|schemastore\.org'
 urls=$(grep -rInoE 'https?://[^ )"'"'"'>]+' --exclude-dir=.git --exclude-dir=node_modules \
         --exclude=privacy-scan.sh --exclude=PRIVACY-REVIEW.md . 2>/dev/null \
         | grep -vE "$allow")

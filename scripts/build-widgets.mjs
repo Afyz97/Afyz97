@@ -144,8 +144,7 @@ function renderLangs(langs, stamp) {
   const bar = langs
     .map((l, i) => {
       const w = Math.max(2, (l.share / 100) * BAR_W);
-      const seg = `<rect x="${x.toFixed(1)}" y="60" width="${w.toFixed(1)}" height="9" fill="${langColor(l.name)}" opacity="0">
-      <animate attributeName="opacity" to="1" dur=".4s" begin="${(0.1 + i * 0.07).toFixed(2)}s" fill="freeze"/></rect>`;
+      const seg = `<rect x="${x.toFixed(1)}" y="60" width="${w.toFixed(1)}" height="9" fill="${langColor(l.name)}"/>`;
       x += w;
       return seg;
     })
@@ -155,7 +154,7 @@ function renderLangs(langs, stamp) {
     .map((l, i) => {
       const lx = BAR_X + (i % 2) * 200;
       const ly = 96 + Math.floor(i / 2) * 22;
-      return `<g opacity="0" style="animation: in .3s ease-out ${(0.2 + i * 0.06).toFixed(2)}s forwards">
+      return `<g>
       <circle cx="${lx + 4}" cy="${ly - 4}" r="4" fill="${langColor(l.name)}"/>
       <text class="mono" x="${lx + 16}" y="${ly}" font-size="11" fill="#E6EDF3">${esc(l.name)}</text>
       <text class="mono" x="${lx + 176}" y="${ly}" font-size="10.5" fill="#5C7183" text-anchor="end">${l.share.toFixed(1)}%</text>
@@ -167,7 +166,6 @@ function renderLangs(langs, stamp) {
   <title>Top languages</title>
   <style>
     .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
-    @keyframes in { to { opacity: 1 } }
   </style>
   <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
   <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">TOP LANGUAGES</text>
@@ -192,15 +190,80 @@ async function gh(path) {
   return res.json();
 }
 
-async function buildLangs() {
+const STATS_OUT = join(root, "assets", "generated", "stats.svg");
+
+// 1234 -> "1.2k". Keeps the card readable once counts grow.
+export function compact(n) {
+  n = Number(n) || 0;
+  return n < 1000 ? String(n) : `${(n / 1000).toFixed(n < 10000 ? 1 : 0).replace(/\.0$/, "")}k`;
+}
+
+function renderStats(stats, stamp) {
+  const W = 420, H = 165;
+  const rows = stats
+    .map(([label, value, accent], i) => {
+      const x = 20 + (i % 2) * 200;
+      const y = 80 + Math.floor(i / 2) * 26;
+      return `<g>
+      <circle cx="${x + 4}" cy="${y - 4}" r="4" fill="${accent}"/>
+      <text class="mono" x="${x + 16}" y="${y}" font-size="11" fill="#8FA5B8">${esc(label)}</text>
+      <text class="mono" x="${x + 176}" y="${y}" font-size="12.5" fill="#E6EDF3" text-anchor="end">${esc(compact(value))}</text>
+    </g>`;
+    })
+    .join("\n    ");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Public GitHub activity totals">
+  <title>GitHub stats</title>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+  <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">GITHUB STATS</text>
+  <text class="mono" x="${W - 20}" y="30" font-size="10" fill="#33465A" text-anchor="end">${esc(stamp)}</text>
+  <text class="mono" x="20" y="48" font-size="10" fill="#3F5464">public activity · private repos never enumerated</text>
+  <line x1="20" y1="60" x2="${W - 20}" y2="60" stroke="#1E2A36"/>
+  ${rows}
+</svg>
+`;
+}
+
+const searchTotal = async (q) => (await gh(`/search/${q}`)).total_count || 0;
+
+async function buildCards() {
+  const stamp = new Date().toISOString().slice(0, 10);
+  mkdirSync(dirname(LANGS_OUT), { recursive: true });
+
   const repos = await gh(`/users/${USER}/repos?per_page=100&type=owner&sort=pushed`);
   const owned = repos.filter((r) => !r.fork && !r.private);
+
   const perRepo = await Promise.all(owned.map((r) => gh(`/repos/${r.full_name}/languages`)));
   const langs = topShares(perRepo, 5); // 5 + Other = 3 legend rows, fits 165px
   if (!langs.length) throw new Error("no language bytes returned");
-  mkdirSync(dirname(LANGS_OUT), { recursive: true });
-  writeFileSync(LANGS_OUT, renderLangs(langs, new Date().toISOString().slice(0, 10)), "utf8");
+  writeFileSync(LANGS_OUT, renderLangs(langs, stamp), "utf8");
   console.log(`wrote ${LANGS_OUT}`);
+
+  const user = await gh(`/users/${USER}`);
+  const [commits, prs, issues] = await Promise.all([
+    searchTotal(`commits?q=author:${USER}&per_page=1`),
+    searchTotal(`issues?q=author:${USER}+type:pr&per_page=1`),
+    searchTotal(`issues?q=author:${USER}+type:issue&per_page=1`),
+  ]);
+  writeFileSync(
+    STATS_OUT,
+    renderStats(
+      [
+        ["commits", commits, "#38BDF8"],
+        ["stars earned", owned.reduce((t, r) => t + r.stargazers_count, 0), "#FBBF24"],
+        ["pull requests", prs, "#A78BFA"],
+        ["issues", issues, "#34D399"],
+        ["public repos", user.public_repos, "#818CF8"],
+        ["followers", user.followers, "#5C7183"],
+      ],
+      stamp
+    ),
+    "utf8"
+  );
+  console.log(`wrote ${STATS_OUT}`);
 }
 
 function selftestLangs() {
@@ -216,6 +279,15 @@ function selftestLangs() {
   const svg = renderLangs([{ name: "C<&>", share: 100 }], "2026-01-01");
   assert.ok(svg.includes("C&lt;&amp;&gt;") && !svg.includes("C<&>"), "language names reach the SVG escaped");
   assert.ok(langColor("Nim").startsWith("hsl("), "unknown languages get a derived colour");
+
+  assert.equal(compact(0), "0", "zero renders plainly");
+  assert.equal(compact(999), "999", "counts under 1k are exact");
+  assert.equal(compact(1000), "1k", "a flat thousand loses the .0");
+  assert.equal(compact(1234), "1.2k", "thousands keep one decimal");
+  assert.equal(compact(12345), "12k", "five figures drop the decimal");
+  const card = renderStats([["a<&>b", 1234, "#fff"]], "2026-01-01");
+  assert.ok(card.includes("a&lt;&amp;&gt;b") && !card.includes("a<&>b"), "stat labels reach the SVG escaped");
+  assert.ok(card.includes("1.2k"), "stat values are rendered compact");
 }
 
 if (process.argv.includes("--selftest")) {
@@ -224,5 +296,5 @@ if (process.argv.includes("--selftest")) {
   console.log("langs selftest ok");
 } else {
   build();
-  await buildLangs();
+  await buildCards();
 }

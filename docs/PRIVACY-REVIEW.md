@@ -40,7 +40,6 @@ Allowlisted external hosts, and why each is there:
 | Host | Purpose | Data it sees |
 |---|---|---|
 | `img.shields.io` | Static badges | Nothing; no query carries profile data |
-| `github-readme-stats.vercel.app` | Public stat panels | Public GitHub username only |
 | `github.com` | Profile link | n/a |
 | `w3.org` | SVG XML namespace | Not fetched |
 

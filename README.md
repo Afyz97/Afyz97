@@ -424,7 +424,7 @@ flowchart LR
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Afyz97&show_icons=true&hide_border=true&bg_color=0B0F14&title_color=38BDF8&icon_color=A78BFA&text_color=8FA5B8&ring_color=38BDF8" height="165" alt="GitHub stats">
+  <img src="assets/generated/stats.svg" height="165" alt="Public GitHub activity totals">
   <img src="assets/generated/langs.svg" height="165" alt="Top languages across public repositories">
 </p>
 

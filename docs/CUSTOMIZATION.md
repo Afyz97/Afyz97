@@ -86,11 +86,14 @@ DM link is usually the better trade. If you do add one, remember `scripts/privac
 fails on email patterns by design; that check exists so the decision is deliberate rather
 than accidental.
 
-## Remove the third-party stat panels
+## The stat panels
 
-The two `github-readme-stats` images in `## Activity` are hosted by a third party and can
-be slow or rate-limited. They read public data only. Delete that `<p align="center">`
-block if you'd rather not depend on an external service; nothing else references it.
+`assets/generated/stats.svg` and `langs.svg` are built locally by
+`scripts/build-widgets.mjs` from the public GitHub REST API: totals via
+`/search`, language bytes summed across public non-fork repos. They replaced the
+`github-readme-stats.vercel.app` cards, which kept returning `DEPLOYMENT_PAUSED`.
+The `update-widgets` workflow refreshes them daily; `node scripts/build-widgets.mjs`
+does the same locally. Delete that `<p align="center">` block to drop them.
 
 ## Show a public repository
 

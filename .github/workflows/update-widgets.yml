@@ -1,7 +1,7 @@
 name: update-widgets
 
 # Regenerates assets/generated/focus.svg from data/profile.json and
-# assets/generated/langs.svg from the public GitHub API.
+# assets/generated/langs.svg + stats.svg from the public GitHub API.
 # Edit the JSON, push, and the widget follows.
 
 on:
