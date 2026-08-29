@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 165" width="420" height="165" role="img" aria-label="Top languages across public repositories">
+  <title>Top languages</title>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    @keyframes in { to { opacity: 1 } }
+  </style>
+  <rect x="1" y="1" width="418" height="163" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">TOP LANGUAGES</text>
+  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-08-29</text>
+  <text class="mono" x="20" y="48" font-size="10" fill="#3F5464">public repos · forks excluded</text>
+  <clipPath id="barclip"><rect x="20" y="60" width="380" height="9" rx="4.5"/></clipPath>
+  <g clip-path="url(#barclip)">
+    <rect x="20" y="60" width="380" height="9" fill="#16202B"/>
+    <rect x="20.0" y="60" width="191.8" height="9" fill="#E34C26" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="0.10s" fill="freeze"/></rect>
+    <rect x="211.8" y="60" width="55.1" height="9" fill="#F1E05A" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="0.17s" fill="freeze"/></rect>
+    <rect x="266.9" y="60" width="46.4" height="9" fill="#C6538C" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="0.24s" fill="freeze"/></rect>
+    <rect x="313.4" y="60" width="42.6" height="9" fill="#563D7C" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="0.31s" fill="freeze"/></rect>
+    <rect x="356.0" y="60" width="31.6" height="9" fill="#F7523F" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="0.38s" fill="freeze"/></rect>
+    <rect x="387.7" y="60" width="12.3" height="9" fill="#5C7183" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="0.45s" fill="freeze"/></rect>
+  </g>
+  <g opacity="0" style="animation: in .3s ease-out 0.20s forwards">
+      <circle cx="24" cy="92" r="4" fill="#E34C26"/>
+      <text class="mono" x="36" y="96" font-size="11" fill="#E6EDF3">HTML</text>
+      <text class="mono" x="196" y="96" font-size="10.5" fill="#5C7183" text-anchor="end">50.5%</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.26s forwards">
+      <circle cx="224" cy="92" r="4" fill="#F1E05A"/>
+      <text class="mono" x="236" y="96" font-size="11" fill="#E6EDF3">JavaScript</text>
+      <text class="mono" x="396" y="96" font-size="10.5" fill="#5C7183" text-anchor="end">14.5%</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.32s forwards">
+      <circle cx="24" cy="114" r="4" fill="#C6538C"/>
+      <text class="mono" x="36" y="118" font-size="11" fill="#E6EDF3">SCSS</text>
+      <text class="mono" x="196" y="118" font-size="10.5" fill="#5C7183" text-anchor="end">12.2%</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.38s forwards">
+      <circle cx="224" cy="114" r="4" fill="#563D7C"/>
+      <text class="mono" x="236" y="118" font-size="11" fill="#E6EDF3">CSS</text>
+      <text class="mono" x="396" y="118" font-size="10.5" fill="#5C7183" text-anchor="end">11.2%</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.44s forwards">
+      <circle cx="24" cy="136" r="4" fill="#F7523F"/>
+      <text class="mono" x="36" y="140" font-size="11" fill="#E6EDF3">Blade</text>
+      <text class="mono" x="196" y="140" font-size="10.5" fill="#5C7183" text-anchor="end">8.3%</text>
+    </g>
+    <g opacity="0" style="animation: in .3s ease-out 0.50s forwards">
+      <circle cx="224" cy="136" r="4" fill="#5C7183"/>
+      <text class="mono" x="236" y="140" font-size="11" fill="#E6EDF3">Other</text>
+      <text class="mono" x="396" y="140" font-size="10.5" fill="#5C7183" text-anchor="end">3.2%</text>
+    </g>
+</svg>

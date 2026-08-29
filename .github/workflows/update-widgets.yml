@@ -1,6 +1,7 @@
 name: update-widgets
 
-# Regenerates assets/generated/focus.svg from data/profile.json.
+# Regenerates assets/generated/focus.svg from data/profile.json and
+# assets/generated/langs.svg from the public GitHub API.
 # Edit the JSON, push, and the widget follows.
 
 on:
@@ -11,7 +12,7 @@ on:
       - "scripts/build-widgets.mjs"
       - ".github/workflows/update-widgets.yml"
   schedule:
-    - cron: "17 3 * * 1" # Mondays, refreshes the "last sync" stamp
+    - cron: "17 3 * * *" # daily, keeps the language split current
   workflow_dispatch:
 
 permissions:
@@ -35,6 +36,8 @@ jobs:
         run: node scripts/build-widgets.mjs --selftest
 
       - name: Build widgets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/build-widgets.mjs
 
       - name: Commit if changed

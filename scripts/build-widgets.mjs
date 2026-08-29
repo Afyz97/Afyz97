@@ -103,4 +103,126 @@ function selftest() {
   console.log("selftest ok");
 }
 
-process.argv.includes("--selftest") ? selftest() : build();
+
+// ---- top languages -------------------------------------------------------
+// Rendered here instead of github-readme-stats.vercel.app, which pauses often.
+// Public repos only, forks excluded. Needs GITHUB_TOKEN in CI (60 req/hr without).
+
+const LANGS_OUT = join(root, "assets", "generated", "langs.svg");
+const USER = process.env.GH_USER || "Afyz97";
+const LANG_COLORS = {
+  JavaScript: "#F1E05A", TypeScript: "#3178C6", PHP: "#4F5D95", Blade: "#F7523F",
+  HTML: "#E34C26", CSS: "#563D7C", SCSS: "#C6538C", Python: "#3572A5",
+  Shell: "#89E051", Vue: "#41B883", Dart: "#00B4AB", Java: "#B07219",
+  "C#": "#178600", Go: "#00ADD8", Rust: "#DEA584", Ruby: "#701516",
+  Kotlin: "#A97BFF", Swift: "#F05138", Dockerfile: "#384D54", Other: "#5C7183",
+};
+const langColor = (name) =>
+  LANG_COLORS[name] ||
+  `hsl(${[...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7)} 60% 60%)`;
+
+// Sums bytes across repos, keeps the top `max`, folds the tail into "Other".
+export function topShares(perRepo, max = 6) {
+  const totals = new Map();
+  for (const repo of perRepo) {
+    for (const [lang, bytes] of Object.entries(repo || {})) {
+      if (Number(bytes) > 0) totals.set(lang, (totals.get(lang) || 0) + Number(bytes));
+    }
+  }
+  const sum = [...totals.values()].reduce((a, b) => a + b, 0);
+  if (!sum) return [];
+  const ranked = [...totals].sort((a, b) => b[1] - a[1]);
+  const head = ranked.slice(0, max).map(([name, bytes]) => ({ name, share: (bytes / sum) * 100 }));
+  const tail = ranked.slice(max).reduce((a, [, b]) => a + b, 0);
+  if (tail > 0) head.push({ name: "Other", share: (tail / sum) * 100 });
+  return head;
+}
+
+function renderLangs(langs, stamp) {
+  const W = 420, H = 165, BAR_X = 20, BAR_W = W - 40;
+  let x = BAR_X;
+  const bar = langs
+    .map((l, i) => {
+      const w = Math.max(2, (l.share / 100) * BAR_W);
+      const seg = `<rect x="${x.toFixed(1)}" y="60" width="${w.toFixed(1)}" height="9" fill="${langColor(l.name)}" opacity="0">
+      <animate attributeName="opacity" to="1" dur=".4s" begin="${(0.1 + i * 0.07).toFixed(2)}s" fill="freeze"/></rect>`;
+      x += w;
+      return seg;
+    })
+    .join("\n    ");
+
+  const legend = langs
+    .map((l, i) => {
+      const lx = BAR_X + (i % 2) * 200;
+      const ly = 96 + Math.floor(i / 2) * 22;
+      return `<g opacity="0" style="animation: in .3s ease-out ${(0.2 + i * 0.06).toFixed(2)}s forwards">
+      <circle cx="${lx + 4}" cy="${ly - 4}" r="4" fill="${langColor(l.name)}"/>
+      <text class="mono" x="${lx + 16}" y="${ly}" font-size="11" fill="#E6EDF3">${esc(l.name)}</text>
+      <text class="mono" x="${lx + 176}" y="${ly}" font-size="10.5" fill="#5C7183" text-anchor="end">${l.share.toFixed(1)}%</text>
+    </g>`;
+    })
+    .join("\n    ");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Top languages across public repositories">
+  <title>Top languages</title>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    @keyframes in { to { opacity: 1 } }
+  </style>
+  <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
+  <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">TOP LANGUAGES</text>
+  <text class="mono" x="${W - 20}" y="30" font-size="10" fill="#33465A" text-anchor="end">${esc(stamp)}</text>
+  <text class="mono" x="20" y="48" font-size="10" fill="#3F5464">public repos · forks excluded</text>
+  <clipPath id="barclip"><rect x="${BAR_X}" y="60" width="${BAR_W}" height="9" rx="4.5"/></clipPath>
+  <g clip-path="url(#barclip)">
+    <rect x="${BAR_X}" y="60" width="${BAR_W}" height="9" fill="#16202B"/>
+    ${bar}
+  </g>
+  ${legend}
+</svg>
+`;
+}
+
+async function gh(path) {
+  const headers = { Accept: "application/vnd.github+json", "User-Agent": "build-widgets" };
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  if (token) headers.Authorization = `Bearer ${token}`;
+  const res = await fetch(`https://api.github.com${path}`, { headers });
+  if (!res.ok) throw new Error(`GET ${path} -> ${res.status}`);
+  return res.json();
+}
+
+async function buildLangs() {
+  const repos = await gh(`/users/${USER}/repos?per_page=100&type=owner&sort=pushed`);
+  const owned = repos.filter((r) => !r.fork && !r.private);
+  const perRepo = await Promise.all(owned.map((r) => gh(`/repos/${r.full_name}/languages`)));
+  const langs = topShares(perRepo, 5); // 5 + Other = 3 legend rows, fits 165px
+  if (!langs.length) throw new Error("no language bytes returned");
+  mkdirSync(dirname(LANGS_OUT), { recursive: true });
+  writeFileSync(LANGS_OUT, renderLangs(langs, new Date().toISOString().slice(0, 10)), "utf8");
+  console.log(`wrote ${LANGS_OUT}`);
+}
+
+function selftestLangs() {
+  const s = topShares([{ PHP: 60 }, { PHP: 20, JS: 20 }]);
+  assert.deepEqual(s.map((l) => l.name), ["PHP", "JS"], "languages rank by summed bytes");
+  assert.equal(s[0].share, 80, "shares are percentages of the total");
+  assert.deepEqual(topShares([]), [], "no repos means no card");
+  assert.deepEqual(topShares([{ A: 0 }]), [], "zero-byte languages are dropped");
+  const many = topShares([{ a: 10, b: 9, c: 8, d: 7, e: 6, f: 5, g: 4, h: 3 }], 6);
+  assert.equal(many.length, 7, "the tail folds into one bucket");
+  assert.equal(many[6].name, "Other", "and that bucket is called Other");
+  assert.ok(Math.abs(many.reduce((t, l) => t + l.share, 0) - 100) < 1e-9, "shares still total 100%");
+  const svg = renderLangs([{ name: "C<&>", share: 100 }], "2026-01-01");
+  assert.ok(svg.includes("C&lt;&amp;&gt;") && !svg.includes("C<&>"), "language names reach the SVG escaped");
+  assert.ok(langColor("Nim").startsWith("hsl("), "unknown languages get a derived colour");
+}
+
+if (process.argv.includes("--selftest")) {
+  selftest();
+  selftestLangs();
+  console.log("langs selftest ok");
+} else {
+  build();
+  await buildLangs();
+}

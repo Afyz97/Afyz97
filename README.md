@@ -425,7 +425,7 @@ flowchart LR
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Afyz97&show_icons=true&hide_border=true&bg_color=0B0F14&title_color=38BDF8&icon_color=A78BFA&text_color=8FA5B8&ring_color=38BDF8" height="165" alt="GitHub stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Afyz97&layout=compact&hide_border=true&bg_color=0B0F14&title_color=38BDF8&text_color=8FA5B8" height="165" alt="Top languages">
+  <img src="assets/generated/langs.svg" height="165" alt="Top languages across public repositories">
 </p>
 
 <sub>The focus split above is self-declared, not live telemetry. The panels below it read public GitHub data only; private repositories are never enumerated.</sub>
