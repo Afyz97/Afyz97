@@ -5,7 +5,7 @@
   </style>
   <rect x="1" y="1" width="418" height="163" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
   <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">GITHUB STATS</text>
-  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-08-30</text>
+  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-08-31</text>
   <text class="mono" x="20" y="48" font-size="10" fill="#3F5464">public activity · private repos never enumerated</text>
   <line x1="20" y1="60" x2="400" y2="60" stroke="#1E2A36"/>
   <g>
