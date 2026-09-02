@@ -21,7 +21,7 @@
 
   <text class="mono" x="24" y="58" font-size="11" fill="#4E6376" letter-spacing="3">CURRENT FOCUS</text>
   <rect x="152" y="53" width="704" height="1" fill="url(#cg)"/>
-  <text class="mono" x="24" y="80" font-size="10.5" fill="#3F5464">generated from data/profile.json · last sync 2026-09-01</text>
+  <text class="mono" x="24" y="80" font-size="10.5" fill="#3F5464">generated from data/profile.json · last sync 2026-09-02</text>
 
     <g opacity="0" style="animation: in .3s ease-out 0.1s forwards">
       <circle cx="34" cy="92" r="4" fill="#38BDF8"/>
