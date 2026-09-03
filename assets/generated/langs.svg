@@ -5,7 +5,7 @@
   </style>
   <rect x="1" y="1" width="418" height="163" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
   <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">TOP LANGUAGES</text>
-  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-09-02</text>
+  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-09-03</text>
   <text class="mono" x="20" y="48" font-size="10" fill="#3F5464">public repos · forks excluded</text>
   <clipPath id="barclip"><rect x="20" y="60" width="380" height="9" rx="4.5"/></clipPath>
   <g clip-path="url(#barclip)">
