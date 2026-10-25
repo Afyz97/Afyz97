@@ -5,37 +5,43 @@
       "id": "backend",
       "label": "Backend",
       "accent": "#38BDF8",
-      "items": ["Laravel", "PHP", "Modular monolith", "REST APIs", "Queues and jobs", "Scheduled tasks"]
+      "items": ["Laravel 13", "PHP 8.4", "Modular monolith", "REST APIs", "Fortify and Sanctum", "Queues and jobs", "Scheduled tasks"]
     },
     {
       "id": "frontend",
       "label": "Frontend",
       "accent": "#A78BFA",
-      "items": ["Blade", "Livewire", "Bootstrap", "Tailwind", "JavaScript", "Progressive Web App"]
+      "items": ["Blade", "Livewire 4", "Flux UI", "Filament", "Inertia", "React 19", "Next.js", "TypeScript", "Tailwind 4", "Bootstrap", "Progressive Web App"]
     },
     {
       "id": "database",
       "label": "Database",
       "accent": "#34D399",
-      "items": ["MySQL", "MariaDB", "Redis", "Schema design", "Migrations", "Reporting queries"]
+      "items": ["MySQL", "MariaDB", "SQLite", "Redis", "Drizzle ORM", "Schema design", "Migrations", "Reporting queries"]
     },
     {
       "id": "ai-engineering",
       "label": "AI Engineering",
       "accent": "#818CF8",
-      "items": ["Agent orchestration", "Skills and plugins", "MCP integrations", "Context design", "Workflow automation"]
+      "items": ["Agent orchestration", "Specialised subagents", "Skills and plugins", "MCP integrations", "Context design", "Workflow automation"]
     },
     {
       "id": "infrastructure",
       "label": "Infrastructure",
       "accent": "#38BDF8",
-      "items": ["Git", "GitHub Actions", "Composer", "npm", "Vite", "Background workers"]
+      "items": ["Git", "GitHub Actions", "Composer", "npm and pnpm", "Vite", "Pest", "PHPStan / Larastan", "Pint", "Background workers"]
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "accent": "#F472B6",
+      "items": ["Flutter", "React Native (Expo)", "OpenAPI contracts"]
     },
     {
       "id": "governance",
       "label": "Governance / Security",
       "accent": "#FBBF24",
-      "items": ["RBAC", "Permission matrices", "Audit logging", "ISMS documentation", "Risk registers"]
+      "items": ["RBAC", "Two-factor and passkeys", "Permission matrices", "Audit logging", "ISMS documentation", "Risk registers"]
     }
   ]
 }

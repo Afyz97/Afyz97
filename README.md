@@ -42,10 +42,11 @@
 
 | Subsystem | State | What it means in practice |
 |---|:--:|---|
-| **Laravel core** | 🟢 `ACTIVE` | Modular monolith, domain-separated modules, service + repository boundaries |
+| **Laravel core** | 🟢 `ACTIVE` | Laravel 13 modular monoliths and multi-tenant SaaS on Livewire 4, Filament and Inertia + React |
 | **AI agents** | 🟢 `ACTIVE` | Orchestrated agents with shared skills, standards and MCP integrations |
 | **Automation** | 🟢 `ACTIVE` | Queues, scheduled jobs, document pipelines, CI workflows |
 | **PWA delivery** | 🟢 `ACTIVE` | Installable, offline-aware member-facing interfaces |
+| **Native mobile** | 🟡 `EXPLORING` | Flutter and React Native clients planned against an OpenAPI contract |
 | **Data / reporting** | 🟢 `ACTIVE` | Schema design, reporting queries, exports |
 | **Security / ISMS** | 🟡 `EXPLORING` | Control mapping, audit evidence, risk registers |
 
@@ -56,7 +57,7 @@
 ## Systems
 
 <p align="center">
-  <img src="assets/apps.svg" width="100%" alt="Application launcher: six installed systems shown by capability">
+  <img src="assets/apps.svg" width="100%" alt="Application launcher: nine featured systems shown by capability">
 </p>
 
 <sub>🔒 Every system below is a real build described generically. Organisation, client, domain and repository identities are deliberately withheld.</sub>
@@ -160,22 +161,24 @@ See [AI Lab](#ai-lab) for the pipeline.
 </details>
 
 <details>
-<summary><b>▸ Event Management Platform</b> · <i>multi-type events, registration and check-in</i></summary>
+<summary><b>▸ Event Management Platform</b> · <i>omni-program events, submissions, review and check-in</i></summary>
 
 <br>
 
 | | |
 |---|---|
-| **Type** | Event and registration system |
-| **Interfaces** | Public listing · Registration flow · PWA check-in · Organiser console |
-| **Architecture** | Configurable event types · Capacity rules · Stateful registration · Notification pipeline |
+| **Type** | Omni-program event and submission system |
+| **Interfaces** | Public listing · Participant portal · PWA check-in · Organiser console · Reviewer workspace |
+| **Architecture** | Configurable program types · Capacity rules · Stateful registration · Review pipeline · Notification pipeline |
 
-**Capabilities.** Multi-type event configuration · registration and ticketing flows ·
-capacity and waitlist handling · attendance capture · notifications and reminders ·
-post-event reporting.
+**Capabilities.** Conferences, competitions, seminars, workshops and hackathons from one
+engine · registration and ticketing flows · paper and entry submission · reviewer
+assignment and scoring · schedule building · capacity and waitlist handling · attendance
+capture · notifications and reminders · post-event reporting.
 
-**Engineering focus.** One registration engine that adapts to event types rather than a
-new codebase per event; check-in works from a phone on unreliable venue connectivity.
+**Engineering focus.** One engine whose terminology and workflow adapt per program type
+rather than a new codebase per event. Status is the content: a participant on a phone near
+a deadline always sees where their submission stands and what to do next.
 
 </details>
 
@@ -217,27 +220,132 @@ are defined once and enforced everywhere rather than re-implemented per surface.
 
 </details>
 
+<details>
+<summary><b>▸ Community Association Platform</b> · <i>bilingual management for residents associations</i></summary>
+
+<br>
+
+| | |
+|---|---|
+| **Type** | Community management system |
+| **Interfaces** | Member self-service · Committee console · Platform admin |
+| **Architecture** | Multi-tenant-ready schema · Role tiers · Bilingual UI · Payment status workflow |
+
+**Capabilities.** Resident and household registry · membership registration and approval ·
+committee roles and terms · dues, fees and payment tracking · announcements · two-factor
+and passkey sign-in.
+
+**Engineering focus.** Runs as a single installation today on a schema that can host
+several associations tomorrow, so going multi-tenant is a configuration change, not a
+rewrite. Strict static analysis (PHPStan level 7) and Pest coverage on the payment paths.
+
+</details>
+
+<details>
+<summary><b>▸ Multi-Event RSVP SaaS</b> · <i>one account, many independent events</i></summary>
+
+<br>
+
+| | |
+|---|---|
+| **Type** | Multi-tenant subscription platform |
+| **Interfaces** | Event public pages · Organiser dashboard · Platform admin |
+| **Architecture** | Multi-tenant accounts · Per-event isolation · Package and add-on entitlements · Separate admin surface |
+
+**Capabilities.** Per-event public address and theming · guest lists and RSVP tracking ·
+gift registry and wishes · guest media uploads · packages, limits and add-ons · platform
+administration.
+
+**Engineering focus.** Every gathering gets its own address and data boundary, while
+entitlements decide what each account can switch on. Warm for guests, calm and dense for
+organisers: two design languages on one codebase.
+
+</details>
+
+<details>
+<summary><b>▸ Legal Document Builder</b> · <i>guided drafting, consent, payment, PDF / DOCX</i></summary>
+
+<br>
+
+| | |
+|---|---|
+| **Type** | Document generation service |
+| **Interfaces** | Public catalogue · Guided builder · Account area · Admin console |
+| **Architecture** | Template-driven builder · Consent capture · Order state machine · Document generation pipeline |
+
+**Capabilities.** Agreement template library · step-by-step guided questions · signed
+acknowledgements · checkout across payment gateways · PDF and DOCX generation.
+
+**Engineering focus.** A full rebuild of an existing app onto Laravel 13 + Inertia + React 19,
+delivered in planned phases with parity tests that compare behaviour against the original,
+so the rewrite is provably equivalent before it goes live.
+
+</details>
+
+<details>
+<summary><b>▸ Native Mobile Companion</b> · <i>web portal and PWA, brought to native</i></summary>
+
+<br>
+
+| | |
+|---|---|
+| **Type** | Cross-platform native app |
+| **Interfaces** | Android · iOS · Alternative Android store |
+| **Architecture** | OpenAPI contract · Backend as source of truth · Feature parity matrix · Phased delivery with ADRs |
+
+**Capabilities.** Role-aware navigation · authenticated API client · push notifications ·
+in-app payments · localisation · parity tracking against the web surfaces.
+
+**Engineering focus.** The backend stays the single source of truth; the contract comes
+first. Planned in parallel as Flutter and React Native (Expo) variants sharing one
+discovery, API strategy and phase plan, so the client stack is a decision, not a gamble.
+
+</details>
+
+<details>
+<summary><b>▸ Job Matching Platform</b> · <i>profile and personality-based recommendations</i></summary>
+
+<br>
+
+| | |
+|---|---|
+| **Type** | Recommendation web app |
+| **Interfaces** | Public job board · Seeker profile · Employer console |
+| **Architecture** | Next.js App Router · Server actions · Drizzle ORM · JWT sessions |
+
+**Capabilities.** Job browsing · seeker profiles and resume upload · personality
+assessment · 0 to 100 match scoring from skills, experience and education · application
+tracking.
+
+**Engineering focus.** Migrated from an early React + Firebase prototype to Next.js 15,
+React 19, MySQL and Auth.js, with the legacy version kept only as a reference.
+
+</details>
+
 ### Workspace
 
 ```text
 📁 enterprise-systems/          📁 commerce/
 ├── Organisation Management     ├── E-Commerce Platform
-├── Academic Administration     ├── POS System
-├── Membership + User Portal    ├── Inventory Management
-└── Administrative Workflow     ├── Invoice + Quotation
+├── Community Association       ├── POS System
+├── Academic Administration     ├── Inventory Management
+├── Membership + User Portal    ├── Invoice + Quotation
+└── Administrative Workflow     ├── Legal Document Builder
                                 └── Payment Integration
 
 📁 events/                      📁 ai-engineering/
 ├── Event Management Platform   ├── AI Development Framework
-├── Registration Management     ├── Agent Orchestration
-└── PWA Event Experience        ├── Shared Agent Skills
+├── Multi-Event RSVP SaaS       ├── Personal AI OS
+├── Registration Management     ├── Design Skills Suite
+└── PWA Event Experience        ├── Agent Orchestration
                                 └── Development Automation
 
-📁 governance/
-├── ISMS Documentation Framework
-├── IT Audit Toolkit
-├── Risk Management
-└── Security Governance
+📁 mobile/                      📁 governance/
+├── Native Mobile (Flutter)     ├── ISMS Documentation Framework
+└── Native Mobile (RN / Expo)   ├── IT Audit Toolkit
+                                ├── Risk Management
+📁 applications/                └── Security Governance
+└── Job Matching Platform
 ```
 
 ---
@@ -357,6 +465,14 @@ flowchart LR
 | **Shared context** | Project profiles and engineering standards every agent inherits |
 | **Knowledge management** | Decisions captured where the next session will find them |
 
+**Recent builds**
+
+| Build | What it is |
+|---|---|
+| **Personal AI OS** | Local-first dashboard that unifies focus tasks, recurring automations, a knowledge base and a registry of AI capabilities, showing trust, provenance and risk before anything is applied |
+| **Design Skills Suite** | Portable agent skills that give coding agents design judgment: a router, shared foundations, an independent reviewer, a motion specialist and ten style experts that know when *not* to apply a style |
+| **Per-project agent teams** | Explorer, planner, implementer, test writer, reviewer and debugger subagents with provider-neutral project memory, shared between Claude Code and Codex |
+
 <sub>Architecture shown conceptually. No private repositories or client workloads are referenced.</sub>
 
 ---
@@ -369,17 +485,22 @@ flowchart LR
 
 **Backend**
 
-![Laravel](https://img.shields.io/badge/Laravel-0B0F14?style=for-the-badge&logo=laravel&logoColor=FF2D20)
-![PHP](https://img.shields.io/badge/PHP-0B0F14?style=for-the-badge&logo=php&logoColor=777BB4)
+![Laravel](https://img.shields.io/badge/Laravel%2013-0B0F14?style=for-the-badge&logo=laravel&logoColor=FF2D20)
+![PHP](https://img.shields.io/badge/PHP%208.4-0B0F14?style=for-the-badge&logo=php&logoColor=777BB4)
 ![REST APIs](https://img.shields.io/badge/REST%20APIs-0B0F14?style=for-the-badge&logo=fastapi&logoColor=38BDF8)
 ![Queues](https://img.shields.io/badge/Queues%20%26%20Jobs-0B0F14?style=for-the-badge&logo=celery&logoColor=34D399)
 
 **Frontend**
 
 ![Blade](https://img.shields.io/badge/Blade-0B0F14?style=for-the-badge&logo=laravel&logoColor=FF2D20)
-![Livewire](https://img.shields.io/badge/Livewire-0B0F14?style=for-the-badge&logo=livewire&logoColor=FB70A9)
+![Livewire](https://img.shields.io/badge/Livewire%204-0B0F14?style=for-the-badge&logo=livewire&logoColor=FB70A9)
+![Filament](https://img.shields.io/badge/Filament-0B0F14?style=for-the-badge&logo=laravel&logoColor=FDAE4B)
+![Inertia](https://img.shields.io/badge/Inertia-0B0F14?style=for-the-badge&logo=inertia&logoColor=9553E9)
+![React](https://img.shields.io/badge/React%2019-0B0F14?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-0B0F14?style=for-the-badge&logo=nextdotjs&logoColor=E6EDF3)
+![TypeScript](https://img.shields.io/badge/TypeScript-0B0F14?style=for-the-badge&logo=typescript&logoColor=3178C6)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-0B0F14?style=for-the-badge&logo=bootstrap&logoColor=7952B3)
-![Tailwind](https://img.shields.io/badge/Tailwind-0B0F14?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4)
+![Tailwind](https://img.shields.io/badge/Tailwind%204-0B0F14?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4)
 ![JavaScript](https://img.shields.io/badge/JavaScript-0B0F14?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![PWA](https://img.shields.io/badge/PWA-0B0F14?style=for-the-badge&logo=pwa&logoColor=5A0FC8)
 
@@ -387,7 +508,15 @@ flowchart LR
 
 ![MySQL](https://img.shields.io/badge/MySQL-0B0F14?style=for-the-badge&logo=mysql&logoColor=4479A1)
 ![MariaDB](https://img.shields.io/badge/MariaDB-0B0F14?style=for-the-badge&logo=mariadb&logoColor=C0765A)
+![SQLite](https://img.shields.io/badge/SQLite-0B0F14?style=for-the-badge&logo=sqlite&logoColor=7DD3FC)
 ![Redis](https://img.shields.io/badge/Redis-0B0F14?style=for-the-badge&logo=redis&logoColor=DC382D)
+![Drizzle](https://img.shields.io/badge/Drizzle%20ORM-0B0F14?style=for-the-badge&logo=drizzle&logoColor=C5F74F)
+
+**Mobile**
+
+![Flutter](https://img.shields.io/badge/Flutter-0B0F14?style=for-the-badge&logo=flutter&logoColor=02569B)
+![React Native](https://img.shields.io/badge/React%20Native-0B0F14?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-0B0F14?style=for-the-badge&logo=expo&logoColor=E6EDF3)
 
 **AI Engineering**
 
@@ -402,10 +531,13 @@ flowchart LR
 ![Composer](https://img.shields.io/badge/Composer-0B0F14?style=for-the-badge&logo=composer&logoColor=885630)
 ![npm](https://img.shields.io/badge/npm-0B0F14?style=for-the-badge&logo=npm&logoColor=CB3837)
 ![Vite](https://img.shields.io/badge/Vite-0B0F14?style=for-the-badge&logo=vite&logoColor=646CFF)
+![Pest](https://img.shields.io/badge/Pest-0B0F14?style=for-the-badge&logo=pestphp&logoColor=F472B6)
+![PHPStan](https://img.shields.io/badge/PHPStan%20%2F%20Larastan-0B0F14?style=for-the-badge&logo=php&logoColor=818CF8)
 
 **Governance / Security**
 
 ![RBAC](https://img.shields.io/badge/RBAC-0B0F14?style=for-the-badge&logo=auth0&logoColor=FBBF24)
+![2FA](https://img.shields.io/badge/2FA%20%2B%20Passkeys-0B0F14?style=for-the-badge&logo=passport&logoColor=FCD34D)
 ![Audit Logging](https://img.shields.io/badge/Audit%20Logging-0B0F14?style=for-the-badge&logo=datadog&logoColor=FCD34D)
 ![ISMS](https://img.shields.io/badge/ISMS-0B0F14?style=for-the-badge&logo=owasp&logoColor=FBBF24)
 
@@ -442,6 +574,10 @@ flowchart LR
 - [x] Multi-interface organisational platform architecture
 - [x] Payment gateway abstraction with idempotent callbacks
 - [x] Reusable agent framework with shared skills and standards
+- [x] Multi-tenant event SaaS with package and add-on entitlements
+- [x] Phased rebuild of a document service onto Laravel + Inertia + React, with parity tests
+- [x] Design-judgment skill suite and per-project subagent teams
+- [ ] Native mobile client on an OpenAPI contract (Flutter / React Native)
 - [ ] Deeper reporting and export layer across modules
 - [ ] Formalised ISMS control-to-evidence mapping
 
@@ -455,6 +591,7 @@ flowchart LR
 - [ ] API-first extraction of core domain modules
 - [ ] Automated regression coverage on money and membership paths
 - [ ] Agent-assisted code review integrated into CI
+- [ ] Multi-association tenancy switched on for the community platform
 - [ ] Offline-first improvements for field / venue use
 
 </details>

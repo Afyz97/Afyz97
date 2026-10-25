@@ -8,28 +8,28 @@
   },
   "currentFocus": [
     {
-      "label": "Enterprise platform architecture",
-      "detail": "modular monolith · multi-interface delivery",
+      "label": "Multi-tenant Laravel platforms",
+      "detail": "Livewire 4 · Flux UI · Filament · Inertia + React",
       "state": "active",
       "share": 40
     },
     {
       "label": "AI agent orchestration",
-      "detail": "skills · MCP integrations · shared context",
+      "detail": "subagents · skill suites · MCP · project memory",
       "state": "active",
       "share": 30
     },
     {
-      "label": "Process automation",
-      "detail": "queues · scheduled jobs · document pipelines",
-      "state": "active",
-      "share": 20
+      "label": "Native mobile on existing APIs",
+      "detail": "Flutter / React Native · OpenAPI contracts",
+      "state": "exploring",
+      "share": 15
     },
     {
-      "label": "Security governance / ISMS",
-      "detail": "controls · audit evidence · risk register",
-      "state": "exploring",
-      "share": 10
+      "label": "Payments and document pipelines",
+      "detail": "gateways · PDF / DOCX generation · queues",
+      "state": "active",
+      "share": 15
     }
   ],
   "mode": "build",

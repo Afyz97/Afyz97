@@ -32,9 +32,9 @@
     <g class="l g1">
       <circle cx="34" cy="88" r="4" fill="#38BDF8"/>
       <text x="48" y="92" font-size="12" fill="#38BDF8" letter-spacing="2.2">BACKEND</text>
-      <text x="30" y="116" font-size="12.5" fill="#C9D6E2">  Laravel</text>
+      <text x="30" y="116" font-size="12.5" fill="#C9D6E2">  Laravel 13 · Fortify · Sanctum</text>
       <text x="404" y="116" font-size="10.5" fill="#4E6376" text-anchor="end">[core]</text>
-      <text x="30" y="138" font-size="12.5" fill="#C9D6E2">  PHP · modular monolith</text>
+      <text x="30" y="138" font-size="12.5" fill="#C9D6E2">  PHP 8.4 · modular monolith</text>
       <text x="404" y="138" font-size="10.5" fill="#4E6376" text-anchor="end">[core]</text>
       <text x="30" y="160" font-size="12.5" fill="#C9D6E2">  REST APIs · queues · jobs</text>
       <text x="404" y="160" font-size="10.5" fill="#4E6376" text-anchor="end">[core]</text>
@@ -42,21 +42,21 @@
     <g class="l g2">
       <circle cx="34" cy="188" r="4" fill="#A78BFA"/>
       <text x="48" y="192" font-size="12" fill="#A78BFA" letter-spacing="2.2">FRONTEND</text>
-      <text x="30" y="216" font-size="12.5" fill="#C9D6E2">  Blade · Livewire</text>
+      <text x="30" y="216" font-size="12.5" fill="#C9D6E2">  Blade · Livewire 4 · Flux · Filament</text>
       <text x="404" y="216" font-size="10.5" fill="#4E6376" text-anchor="end">[ui]</text>
-      <text x="30" y="238" font-size="12.5" fill="#C9D6E2">  Bootstrap · Tailwind</text>
+      <text x="30" y="238" font-size="12.5" fill="#C9D6E2">  Inertia · React 19 · Next.js · TS</text>
       <text x="404" y="238" font-size="10.5" fill="#4E6376" text-anchor="end">[ui]</text>
-      <text x="30" y="260" font-size="12.5" fill="#C9D6E2">  Progressive Web App</text>
+      <text x="30" y="260" font-size="12.5" fill="#C9D6E2">  Tailwind 4 · PWA · Flutter · RN</text>
       <text x="404" y="260" font-size="10.5" fill="#4E6376" text-anchor="end">[ui]</text>
     </g>
     <g class="l g3">
       <circle cx="34" cy="288" r="4" fill="#34D399"/>
       <text x="48" y="292" font-size="12" fill="#34D399" letter-spacing="2.2">DATABASE</text>
-      <text x="30" y="316" font-size="12.5" fill="#C9D6E2">  MySQL · MariaDB</text>
+      <text x="30" y="316" font-size="12.5" fill="#C9D6E2">  MySQL · MariaDB · SQLite</text>
       <text x="404" y="316" font-size="10.5" fill="#4E6376" text-anchor="end">[data]</text>
       <text x="30" y="338" font-size="12.5" fill="#C9D6E2">  Redis · cache · sessions</text>
       <text x="404" y="338" font-size="10.5" fill="#4E6376" text-anchor="end">[data]</text>
-      <text x="30" y="360" font-size="12.5" fill="#C9D6E2">  Schema · migrations · seeding</text>
+      <text x="30" y="360" font-size="12.5" fill="#C9D6E2">  Drizzle · schema · migrations</text>
       <text x="404" y="360" font-size="10.5" fill="#4E6376" text-anchor="end">[data]</text>
     </g>
 
@@ -65,7 +65,7 @@
     <g class="l g4">
       <circle cx="474" cy="88" r="4" fill="#818CF8"/>
       <text x="488" y="92" font-size="12" fill="#818CF8" letter-spacing="2.2">AI ENGINEERING</text>
-      <text x="470" y="116" font-size="12.5" fill="#C9D6E2">  Agent orchestration</text>
+      <text x="470" y="116" font-size="12.5" fill="#C9D6E2">  Agent orchestration · subagents</text>
       <text x="852" y="116" font-size="10.5" fill="#4E6376" text-anchor="end">[ai]</text>
       <text x="470" y="138" font-size="12.5" fill="#C9D6E2">  Skills · plugins · MCP</text>
       <text x="852" y="138" font-size="10.5" fill="#4E6376" text-anchor="end">[ai]</text>
@@ -77,7 +77,7 @@
       <text x="488" y="192" font-size="12" fill="#38BDF8" letter-spacing="2.2">INFRASTRUCTURE</text>
       <text x="470" y="216" font-size="12.5" fill="#C9D6E2">  Git · CI/CD workflows</text>
       <text x="852" y="216" font-size="10.5" fill="#4E6376" text-anchor="end">[infra]</text>
-      <text x="470" y="238" font-size="12.5" fill="#C9D6E2">  Composer · npm · Vite</text>
+      <text x="470" y="238" font-size="12.5" fill="#C9D6E2">  Composer · pnpm · Vite · Pest</text>
       <text x="852" y="238" font-size="10.5" fill="#4E6376" text-anchor="end">[infra]</text>
       <text x="470" y="260" font-size="12.5" fill="#C9D6E2">  Schedulers · background workers</text>
       <text x="852" y="260" font-size="10.5" fill="#4E6376" text-anchor="end">[infra]</text>
@@ -85,7 +85,7 @@
     <g class="l g6">
       <circle cx="474" cy="288" r="4" fill="#FBBF24"/>
       <text x="488" y="292" font-size="12" fill="#FBBF24" letter-spacing="2.2">GOVERNANCE</text>
-      <text x="470" y="316" font-size="12.5" fill="#C9D6E2">  RBAC · permissions</text>
+      <text x="470" y="316" font-size="12.5" fill="#C9D6E2">  RBAC · 2FA · passkeys</text>
       <text x="852" y="316" font-size="10.5" fill="#4E6376" text-anchor="end">[gov]</text>
       <text x="470" y="338" font-size="12.5" fill="#C9D6E2">  Audit logging · traceability</text>
       <text x="852" y="338" font-size="10.5" fill="#4E6376" text-anchor="end">[gov]</text>

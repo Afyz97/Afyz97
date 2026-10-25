@@ -31,9 +31,8 @@ node scripts/build-widgets.mjs --selftest # check the generator still behaves
 1. Add the entry to [`data/systems.json`](../data/systems.json), which is the
    canonical, reviewable list.
 2. Add the matching `<details>` block under `## Systems` in `README.md`.
-3. If it needs a tile in the launcher graphic, add it to `assets/apps.svg` (6 tiles fit
-   the current 3×2 grid; a 7th needs the grid extended to 3 rows and the viewBox height
-   raised by ~116).
+3. If it needs a tile in the launcher graphic, add it to `assets/apps.svg` (9 tiles fit
+   the current 3×3 grid; a 10th needs a 4th row and the viewBox height raised by ~116).
 
 **The naming rule holds absolutely**: generic labels only. `Organisation Management
 System`, never the real product name.

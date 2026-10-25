@@ -8,23 +8,8 @@
       "summary": "Integrated digital ecosystem covering the operational, administrative, financial, membership, programme and public-facing functions of an organisation.",
       "interfaces": ["Public Website", "Member Portal", "Progressive Web App", "Admin Console"],
       "architecture": ["Modular monolith", "Role-based access", "API-ready", "Event-driven jobs"],
-      "capabilities": [
-        "Membership management",
-        "User and access management",
-        "Committee management",
-        "Programme / activity management",
-        "Finance management",
-        "Fund management",
-        "Donation management",
-        "E-commerce",
-        "Meetings",
-        "Document / filing management",
-        "Payment gateway integration",
-        "Reporting",
-        "Notifications",
-        "System configuration"
-      ],
-      "stack": ["Laravel", "MySQL", "Bootstrap", "PWA", "Queues", "PDF generation"]
+      "capabilities": ["Membership management", "User and access management", "Committee management", "Programme / activity management", "Finance management", "Fund management", "Donation management", "E-commerce", "Meetings", "Document / filing management", "Payment gateway integration", "Reporting", "Notifications", "System configuration"],
+      "stack": ["Laravel", "MySQL", "Bootstrap", "PWA", "Queues", "PDF generation", "Livewire", "Sanctum API"]
     },
     {
       "id": "commerce-operations-platform",
@@ -33,15 +18,7 @@
       "summary": "Storefront, point of sale and inventory operations sharing one catalogue, one stock ledger and one payment layer.",
       "interfaces": ["Storefront", "POS Terminal", "Back Office"],
       "architecture": ["Shared catalogue", "Stock ledger", "Gateway abstraction", "Idempotent callbacks"],
-      "capabilities": [
-        "Catalogue and variants",
-        "Cart and checkout",
-        "Order lifecycle and fulfilment",
-        "Stock movement and reconciliation",
-        "Invoicing and quotations",
-        "Payment gateway integration",
-        "Receipts and shift handling"
-      ],
+      "capabilities": ["Catalogue and variants", "Cart and checkout", "Order lifecycle and fulfilment", "Stock movement and reconciliation", "Invoicing and quotations", "Payment gateway integration", "Receipts and shift handling"],
       "stack": ["Laravel", "MySQL", "Redis", "Payment gateways"]
     },
     {
@@ -51,33 +28,18 @@
       "summary": "Engineering workspace that makes AI assistance repeatable across projects instead of improvised per prompt.",
       "interfaces": ["CLI", "Editor integration", "Automation hooks"],
       "architecture": ["Orchestrator", "Specialised agents", "Shared context", "Skill and plugin registry"],
-      "capabilities": [
-        "Agent orchestration",
-        "Reusable skills and plugins",
-        "MCP integrations",
-        "Project profiles",
-        "Development standards",
-        "Automated workflows",
-        "Knowledge management"
-      ],
+      "capabilities": ["Agent orchestration", "Reusable skills and plugins", "MCP integrations", "Project profiles", "Development standards", "Automated workflows", "Knowledge management", "Local-first operations dashboard", "Design-judgment skill suite", "Provider-neutral project memory"],
       "stack": ["Node", "MCP", "Git", "CI/CD"]
     },
     {
       "id": "event-management-platform",
       "name": "Event Management Platform",
       "category": "events",
-      "summary": "Configurable multi-type event system handling registration, capacity, attendance and post-event reporting.",
-      "interfaces": ["Public listing", "Registration flow", "PWA check-in", "Organiser console"],
+      "summary": "Omni-program event platform: one system runs conferences, competitions, seminars, workshops and hackathons, with terminology and workflow adapting per program type.",
+      "interfaces": ["Public listing", "Participant portal", "PWA check-in", "Organiser console", "Reviewer workspace"],
       "architecture": ["Configurable event types", "Capacity rules", "Stateful registration", "Notification pipeline"],
-      "capabilities": [
-        "Multi-type event configuration",
-        "Registration and ticketing flows",
-        "Capacity and waitlist handling",
-        "Attendance capture",
-        "Notifications and reminders",
-        "Post-event reporting"
-      ],
-      "stack": ["Laravel", "MySQL", "PWA", "Queues"]
+      "capabilities": ["Multi-type event configuration", "Registration and ticketing flows", "Submission and peer-review workflow", "Reviewer assignment and scoring", "Schedule building", "Capacity and waitlist handling", "Attendance capture", "Notifications and reminders", "Post-event reporting"],
+      "stack": ["Laravel", "Livewire", "Tailwind", "MySQL", "PWA", "Queues"]
     },
     {
       "id": "governance-security-toolkit",
@@ -86,14 +48,7 @@
       "summary": "Documentation and tracking layer for information security management: controls, risks, evidence and audit readiness.",
       "interfaces": ["Documentation set", "Register views", "Audit exports"],
       "architecture": ["Control mapping", "Risk register", "Evidence trail", "Review cycles"],
-      "capabilities": [
-        "ISMS documentation framework",
-        "Control mapping",
-        "Risk register and treatment",
-        "Audit evidence tracking",
-        "IT audit checklists",
-        "Policy review cycles"
-      ],
+      "capabilities": ["ISMS documentation framework", "Control mapping", "Risk register and treatment", "Audit evidence tracking", "IT audit checklists", "Policy review cycles"],
       "stack": ["Markdown", "Structured data", "Reporting"]
     },
     {
@@ -103,15 +58,58 @@
       "summary": "Self-service identity surface: one account model shared across public site, portal and installable app.",
       "interfaces": ["Member Portal", "PWA", "Admin Console"],
       "architecture": ["Single identity model", "Role and permission matrix", "Session and device handling"],
-      "capabilities": [
-        "Registration and verification",
-        "Profile self-service",
-        "Roles and permissions",
-        "Statements and history",
-        "Notifications",
-        "Audit logging"
-      ],
+      "capabilities": ["Registration and verification", "Profile self-service", "Roles and permissions", "Statements and history", "Notifications", "Audit logging"],
       "stack": ["Laravel", "MySQL", "PWA", "RBAC"]
+    },
+    {
+      "id": "community-association-platform",
+      "name": "Community Association Platform",
+      "category": "enterprise-systems",
+      "summary": "Bilingual management system for residents associations: households, membership, committees, dues and payments, on a schema built to host several associations.",
+      "interfaces": ["Member self-service", "Committee console", "Platform admin"],
+      "architecture": ["Multi-tenant-ready schema", "Role tiers", "Bilingual UI", "Payment status workflow"],
+      "capabilities": ["Resident and household registry", "Membership registration and approval", "Committee roles and terms", "Dues, fees and payment tracking", "Announcements", "Two-factor and passkey sign-in"],
+      "stack": ["Laravel", "Livewire", "Flux UI", "Tailwind", "Fortify", "Pest", "Larastan"]
+    },
+    {
+      "id": "multi-event-rsvp-saas",
+      "name": "Multi-Event RSVP SaaS",
+      "category": "events",
+      "summary": "Subscription platform where one account runs many independent events, each with its own public address, guest list, RSVPs, gifts, wishes and guest media.",
+      "interfaces": ["Event public pages", "Organiser dashboard", "Platform admin"],
+      "architecture": ["Multi-tenant accounts", "Per-event isolation", "Package and add-on entitlements", "Separate admin surface"],
+      "capabilities": ["Per-event public URLs and theming", "Guest lists and RSVP tracking", "Gift registry and wishes", "Guest media uploads", "Packages, limits and add-ons", "Platform administration"],
+      "stack": ["Laravel", "Filament", "Livewire", "Flux UI", "Tailwind", "Pest"]
+    },
+    {
+      "id": "legal-document-builder",
+      "name": "Legal Document Builder",
+      "category": "commerce",
+      "summary": "Guided agreement-drafting service: users answer a builder, sign an acknowledgement, pay, and download a generated PDF or DOCX.",
+      "interfaces": ["Public catalogue", "Guided builder", "Account area", "Admin console"],
+      "architecture": ["Template-driven builder", "Consent capture", "Order state machine", "Document generation pipeline"],
+      "capabilities": ["Agreement template library", "Step-by-step guided questions", "Signed acknowledgements", "Checkout and payment gateways", "PDF and DOCX generation", "Parity tests against the original app"],
+      "stack": ["Laravel", "Inertia", "React", "TypeScript", "Tailwind", "Fortify", "Pest"]
+    },
+    {
+      "id": "native-mobile-companion",
+      "name": "Native Mobile Companion",
+      "category": "enterprise-systems",
+      "summary": "Permission-aware native app that brings an existing web portal and PWA to Android, alternative Android stores and iOS, with the Laravel backend kept as the single source of truth.",
+      "interfaces": ["Android", "iOS", "Alternative Android store"],
+      "architecture": ["OpenAPI contract", "Backend as source of truth", "Feature parity matrix", "Phased delivery with ADRs"],
+      "capabilities": ["Role-aware navigation", "Authenticated API client", "Push notifications", "In-app payments", "Localisation", "Parity tracking against web"],
+      "stack": ["Flutter", "React Native (Expo)", "OpenAPI", "Laravel API"]
+    },
+    {
+      "id": "job-matching-platform",
+      "name": "Job Matching Platform",
+      "category": "applications",
+      "summary": "Job platform that scores openings for each seeker from profile, skills, experience, education and a personality assessment.",
+      "interfaces": ["Public job board", "Seeker profile", "Employer console"],
+      "architecture": ["App Router", "Server actions", "Typed ORM", "JWT sessions"],
+      "capabilities": ["Job browsing and detail pages", "Seeker profiles and resume upload", "Personality assessment", "0 to 100 match scoring", "Applications tracking"],
+      "stack": ["Next.js", "React", "TypeScript", "Drizzle ORM", "MySQL", "Auth.js", "Vitest"]
     }
   ]
 }
