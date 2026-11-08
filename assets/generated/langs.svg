@@ -5,22 +5,22 @@
   </style>
   <rect x="1" y="1" width="418" height="163" rx="12" fill="#0B0F14" stroke="#1E2A36"/>
   <text class="mono" x="20" y="30" font-size="12.5" fill="#38BDF8" letter-spacing="1.5">TOP LANGUAGES</text>
-  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-11-07</text>
+  <text class="mono" x="400" y="30" font-size="10" fill="#33465A" text-anchor="end">2026-11-08</text>
   <text class="mono" x="20" y="48" font-size="10" fill="#3F5464">public repos · forks excluded</text>
   <clipPath id="barclip"><rect x="20" y="60" width="380" height="9" rx="4.5"/></clipPath>
   <g clip-path="url(#barclip)">
     <rect x="20" y="60" width="380" height="9" fill="#16202B"/>
-    <rect x="20.0" y="60" width="191.9" height="9" fill="#E34C26"/>
-    <rect x="211.9" y="60" width="55.1" height="9" fill="#F1E05A"/>
-    <rect x="267.0" y="60" width="46.5" height="9" fill="#C6538C"/>
-    <rect x="313.5" y="60" width="42.4" height="9" fill="#563D7C"/>
-    <rect x="356.0" y="60" width="31.7" height="9" fill="#F7523F"/>
-    <rect x="387.6" y="60" width="12.4" height="9" fill="#5C7183"/>
+    <rect x="20.0" y="60" width="190.0" height="9" fill="#E34C26"/>
+    <rect x="210.0" y="60" width="55.2" height="9" fill="#F1E05A"/>
+    <rect x="265.2" y="60" width="45.2" height="9" fill="#C6538C"/>
+    <rect x="310.5" y="60" width="41.9" height="9" fill="#563D7C"/>
+    <rect x="352.3" y="60" width="30.8" height="9" fill="#F7523F"/>
+    <rect x="383.1" y="60" width="16.9" height="9" fill="#5C7183"/>
   </g>
   <g>
       <circle cx="24" cy="92" r="4" fill="#E34C26"/>
       <text class="mono" x="36" y="96" font-size="11" fill="#E6EDF3">HTML</text>
-      <text class="mono" x="196" y="96" font-size="10.5" fill="#5C7183" text-anchor="end">50.5%</text>
+      <text class="mono" x="196" y="96" font-size="10.5" fill="#5C7183" text-anchor="end">50.0%</text>
     </g>
     <g>
       <circle cx="224" cy="92" r="4" fill="#F1E05A"/>
@@ -30,21 +30,21 @@
     <g>
       <circle cx="24" cy="114" r="4" fill="#C6538C"/>
       <text class="mono" x="36" y="118" font-size="11" fill="#E6EDF3">SCSS</text>
-      <text class="mono" x="196" y="118" font-size="10.5" fill="#5C7183" text-anchor="end">12.2%</text>
+      <text class="mono" x="196" y="118" font-size="10.5" fill="#5C7183" text-anchor="end">11.9%</text>
     </g>
     <g>
       <circle cx="224" cy="114" r="4" fill="#563D7C"/>
       <text class="mono" x="236" y="118" font-size="11" fill="#E6EDF3">CSS</text>
-      <text class="mono" x="396" y="118" font-size="10.5" fill="#5C7183" text-anchor="end">11.2%</text>
+      <text class="mono" x="396" y="118" font-size="10.5" fill="#5C7183" text-anchor="end">11.0%</text>
     </g>
     <g>
       <circle cx="24" cy="136" r="4" fill="#F7523F"/>
       <text class="mono" x="36" y="140" font-size="11" fill="#E6EDF3">Blade</text>
-      <text class="mono" x="196" y="140" font-size="10.5" fill="#5C7183" text-anchor="end">8.3%</text>
+      <text class="mono" x="196" y="140" font-size="10.5" fill="#5C7183" text-anchor="end">8.1%</text>
     </g>
     <g>
       <circle cx="224" cy="136" r="4" fill="#5C7183"/>
       <text class="mono" x="236" y="140" font-size="11" fill="#E6EDF3">Other</text>
-      <text class="mono" x="396" y="140" font-size="10.5" fill="#5C7183" text-anchor="end">3.3%</text>
+      <text class="mono" x="396" y="140" font-size="10.5" fill="#5C7183" text-anchor="end">4.4%</text>
     </g>
 </svg>
